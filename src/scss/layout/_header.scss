@@ -1,0 +1,66 @@
+.cabezera{
+    background: url(/src/img/bg8.jpg) no-repeat center center fixed;
+    background-size: cover;
+    @include escritorio{
+        background-image: url(/build/img/bg.jpg);
+        background-position: top center;
+     
+    }
+    height: 100vh;
+    min-height:80rem;
+    position: relative;
+    z-index: 1;
+
+   @include difuminado-transparente($negroTransparente);
+}
+
+.contenido-header{
+    @include alineado-verticalmente(center);
+    position: relative;
+    height: 100%;
+    z-index: 1;
+
+    @include tablet{
+        padding-top: 8rem;
+    }
+}
+
+
+.contenido-texto{
+    h1{
+        text-transform: capitalize;
+        color:$blanco;
+        text-align: center;
+        margin: 0;
+        @include tablet{
+            text-align: left;
+            
+        }
+
+        span{
+            color: $amarillo;
+        }
+
+        
+    }
+
+}
+
+ .contenido-logo{
+    img{
+        display: none;
+        @include tablet{
+             display: unset;
+        }
+    }
+}
+.contenedor-boton{
+    padding-top: 3rem;
+    @include centrar-justify;
+
+    @include tablet{
+        justify-content: flex-start;
+    }
+    
+}
+

@@ -1,0 +1,124 @@
+.informacion-contacto{
+    margin-top: 2rem;
+    background-color:$azulBlanco;
+ 
+}
+.alinear-iconos-contacto{
+    padding: 1rem;
+    margin-top: 5rem;
+   @include tablet{
+    padding: 2rem;
+    @include grid (3,1fr);
+   }
+    
+}
+
+.iconos-contacto{
+  .icono-contacto{
+
+     @include centrar-justify;
+     font-size: 3rem;
+     color: $amarillo;
+
+  }
+   
+}
+.texto-icono-contacto{
+    color: $azul;
+    text-align: center;
+   
+
+    h4, p{
+        font-size: 1.8rem;
+    }
+}
+.footer{
+  background-color: $azul;
+}
+.contenedor-footer{
+    @include grid(2,1fr);
+    .ultimo-enlaces{
+        grid-column: 1/2;
+        margin-left: 2rem;
+    }
+    .alinear-logo{
+        grid-column: 1/3;
+    }
+   @include tablet{
+    .alinear-logo{
+        grid-column: unset;
+    }
+    .ultimo-enlaces{
+        margin-left: 0;
+        grid-column: unset;
+    }
+    @include grid(3,1fr);
+   }
+}
+.logo-footer{
+    @include direccion-flex-centrar-horizontal;
+    img{
+        width: 15rem;
+
+    }
+    p{
+        font-size: 1.8rem;
+        color: $blanco;
+        text-transform: capitalize;
+        text-align: center;
+        
+    }
+}
+.derechos-footer{
+   border-top: 1px solid rgb(73, 73, 73);
+   @include tablet{
+    display: flex;
+    justify-content: space-between;
+   }
+
+   p{
+       color:$blanco;
+       font-size: 1.8rem;
+
+       
+   }
+}
+.enlaces-footer{
+    @include tablet{
+        @include direccion-flex-centrar-horizontal;
+    }
+
+    h4{
+        color:$amarillo;
+    }
+    ul{
+        padding: 0;
+    }
+    li{
+        color: $amarillo;
+        list-style: none;
+
+        @include adorno-texto(.5rem);
+        
+
+        a{
+            text-decoration: none;
+            color:$blanco;
+            
+        }
+       
+    }
+}
+.derechos-footer{
+    p{
+        font-weight: $bold;
+        padding-bottom: 2rem;
+        margin-bottom: 0;
+        text-align: center;
+
+
+    }
+}
+.autor{
+    color: $blanco;
+}

@@ -1,0 +1,39 @@
+
+.contenedor-informacion-servicios{
+    overflow: hidden;
+   @include escritorio{
+    @include grid (3,1fr);
+    gap: 2rem;
+   }
+}
+.informacion-servicios{
+   @include escritorio{
+       border: 1.5px solid $azul;
+   }
+    padding: 1rem;
+}
+.informacion-servicio{
+    @include direccion-flex-centrar-horizontal;
+    margin-bottom: 2rem;
+    text-align: center;
+    p{
+        color: $azul;
+        @include tablet{
+            width: 75%;
+           
+        }
+        @include escritorio{
+            width: 90%;
+        }
+
+    }
+  
+    
+}
+.icono-servicio{
+    @include direccion-flex-centrar-horizontal;
+   h3{
+       color: $amarillo;
+       text-transform: capitalize;
+   }
+}

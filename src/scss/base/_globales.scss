@@ -1,0 +1,106 @@
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+
+body{
+  font-family: $fuentePrincipal;
+  font-size: 1.6rem;
+   //para fijar el body, cuando se de click mostrar video
+   &.fijar-body{
+    overflow: hidden;
+
+}
+}
+
+.contenedor{
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 95%;
+}
+
+img{
+  max-width: 100%;
+}
+
+.margin-top{
+  margin-top: 10rem;
+}
+.margin-bottom{
+  margin-bottom: 10rem;
+}
+.no-margin{
+  margin: 0;
+}
+.no-margin-top{
+  margin-top: 0;
+}
+
+
+
+h1{
+  font-size: 3rem;
+  @include tablet{
+    font-size: 4rem;
+  }
+  @include escritorio{
+    font-size: 6rem;
+  }
+}
+h2{
+  font-size: 3.5rem;
+  @include tablet{
+    font-size: 3.6rem;
+  }
+  @include escritorio{
+    font-size: 5rem;
+  }
+}
+h3{
+  font-size: 2.2rem;
+  @include tablet{
+    font-size: 3rem;
+  }
+}
+
+p{
+  
+  font-size: 2rem;
+  @include tablet{
+    font-size: 2.2rem;
+  }
+}
+
+a{
+  font-size: 2rem;
+  @include tablet{
+    font-size: 1.8rem;
+  }
+}
+
+.boton-primario{
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  padding:1rem 4rem;
+  display: inline-block;
+  transition: background-color .3s ease;
+
+  
+}
+.amarillo{
+  background-color: $amarillo;
+  &:hover{
+    background-color: $azul;
+  }
+}
+.azul{
+  background-color: $azul;
+  &:hover{
+    background-color: $amarillo;
+  }
+}

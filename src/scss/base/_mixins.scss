@@ -1,0 +1,111 @@
+@mixin telefono{
+  @media(min-width: $telefono){
+    @content;
+  }
+}
+
+@mixin tabletAncha {
+  @media(min-width:$tabletAncha){
+    @content;
+  }
+}
+
+
+@mixin tablet {
+  @media(min-width:$tablet){
+    @content;
+  }
+}
+
+@mixin escritorio {
+  @media (min-width:$escritorio) {
+    @content;
+  }
+}
+
+
+@mixin flex-align-justify {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin alineado-verticalmente($posicion){
+    display: flex;
+    align-items: $posicion;
+}
+
+@mixin grid($numColumnas, $tamanio){
+  display: grid;
+  grid-template-columns: repeat($numColumnas, $tamanio);
+}
+
+@mixin difuminado-transparente($color){
+  &::before{
+    content: '';
+    background-color: $color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   
+  }
+}
+
+@mixin centrar-justify{
+    display: flex;
+    justify-content: center;
+}
+
+@mixin direccion-flex-centrar-vertical{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+@mixin  flex-centrar-ver-hor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@mixin direccion-flex-centrar-horizontal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin adorno-texto($separacion-derecha){
+    &::before{
+      content: '>';
+      color: $amarillo;
+      margin-right:$separacion-derecha;
+      font-weight: $bold;
+  }
+}
+//Banners con una imagen de fondo
+@mixin texto-bg-transparente{
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  height: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  h1{
+      color: #fff;
+      background-color: rgba($azul, .8);
+      padding: 2rem;
+  }
+}
+
+@mixin banner-bg-imagen ($urlImg) {
+  padding-top: 5rem;
+  background: $urlImg no-repeat fixed center center;
+  height: 65rem;
+  background-size: cover;
+  position: relative;
+  
+}

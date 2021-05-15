@@ -1,0 +1,213 @@
+
+.navegacion-contenido{
+  background-color: $azul;
+  top: 0;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+
+}
+.navegacion-contenedor{
+ @include flex-align-justify;
+  padding: 1rem;
+
+  p,a{
+    color: #fff;
+  }
+  
+}
+
+.navegacion-logo{
+      p{
+        // font-size: 2rem;
+        font-weight: $bold;
+        
+      }
+}
+
+.navegacion.abrir{
+  animation: slide .5s;
+  @include escritorio{
+    display: none;
+
+  }
+  display:flex;
+  flex-direction: column;
+  position: absolute;
+  right:0;
+  top: 78px;
+  width: 100%;
+  background-color: $azul;
+  padding: 2rem;
+}
+
+.navegacion.abrir:active{
+  @include escritorio{
+    display: none;
+  }
+}
+
+
+.navegacion{
+
+  display: none;
+  
+  @include escritorio{
+    display: block;
+  }
+    a{
+      text-decoration: none;
+      padding: 1.5rem;
+      transition: all .3s ease;
+      
+  &:hover{
+    color: $amarillo;
+  
+
+  }
+  &:hover:last-child{
+      background-color: unset;
+      
+  }
+    }
+  
+
+}
+
+/*Menu hamburguesa*/
+
+.menu-movil{
+  @include escritorio{
+    display: none;
+  }
+  button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 6rem;
+    height: 6rem;
+  }
+  span{
+    border-radius:5px;
+    background-color:$blanco;
+    display: block;
+    width: 60%;
+    margin: 5px auto;
+    height: 2px;
+    animation-duration: 1s;
+    //para que se quede en el ultimo frame, o sea que no se resetee una vez que se ejecuta
+    animation-fill-mode: forwards;
+  }
+
+}
+
+//animacion del menu hamburguesa
+.menu-movil button.abrir .arriba{
+  animation-name: arriba-animacion;
+}
+.menu-movil button.abrir .medio{
+  animation-name: medio-animacion;
+}
+.menu-movil button.abrir .abajo{
+  animation-name: abajo-animacion;
+}
+
+
+.menu-movil button .arriba{
+  animation-name: arriba-animacion-cerrar;
+}
+.menu-movil button .medio{
+  animation-name: medio-animacion-cerrar;
+}
+
+.menu-movil button .abajo{
+  animation-name: abajo-animacion-cerrar;
+}
+
+
+@keyframes arriba-animacion{
+
+  50%, 100%{
+    margin: 0 auto;
+    transform: translateY(.2rem ) rotate(-45deg);
+  }
+}
+
+@keyframes abajo-animacion{
+
+  50%, 100%{
+    margin: 0 auto;
+    transform: translateY(-.2rem) rotate(45deg);
+  }
+}
+@keyframes  medio-animacion{
+
+  20%, 100%{
+    margin: 0 auto;
+    width: 0;
+    opacity: 0;
+  }
+}
+
+//al hacer click a la X
+@keyframes arriba-animacion-cerrar{
+    0%{
+      margin: 0 auto;
+      transform: translateY(.2rem) rotate(-45deg);
+    }
+
+    50%, 100%{
+        margin: .5rem auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes medio-animacion-cerrar{
+
+  0%{
+    margin: 0 auto;
+    width: 0;
+    opacity: 0;
+  }
+  20%, 100%{
+    margin: 0 auto;
+    width: 60%;
+    opacity: 1;
+  }
+}
+
+@keyframes abajo-animacion-cerrar{
+
+  0%{
+    margin: 0 auto;
+    transform: translateY(-2px) rotate(45deg);
+
+  }
+
+  50%,100%{
+    margin: 5px auto;
+    transform: translateY(0px) rotate(0deg);
+  }
+
+}
+
+.activo{
+  // border-bottom: 2px solid $amarillo;
+  color: $amarillo !important;
+}
+@keyframes slide{
+  0%{
+   
+      // transform: scale(1.1);
+      transform: translateY(-100%);
+  }
+  100%{
+      
+      // transform: scale(1);
+      transform: translateY(0);
+  }
+}

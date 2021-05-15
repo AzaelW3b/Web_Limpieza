@@ -1,0 +1,284 @@
+.banner-nosotros{
+    @include banner-bg-imagen( url(/src/img/bannerNosotros.jpg));
+    @include difuminado-transparente($negroTransparente);
+    padding-top: 0;
+    height: 45rem;
+    @include tablet{
+        padding-top: 5rem;
+        height: 90rem;
+    }
+    @include escritorio{
+        height: 65rem;
+    }
+}
+
+.texto-banner-nosotros{
+   @include texto-bg-transparente;
+   h1{
+       width: 100%;
+       text-align: center;
+   }
+   @include tablet{
+       width: 50%;
+       text-align: left;
+   }
+  
+}
+.vista-conocenos{
+    overflow: hidden;
+    padding: 5rem;
+}
+.contenedor-conocenos{
+    display: flex;
+    flex-direction: column;
+    .texto-conocenos{
+        order: 2;
+
+    }
+    @include tablet{
+        .texto-conocenos{
+            order: unset;
+        }
+        @include grid(2,1fr);
+        gap: 2rem;
+
+
+        .mover-imagen{
+            
+            grid-row: 1/2;
+        }
+    }
+}
+.imagen-conocenos{
+    @include tablet{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img{
+            transition: all .3s ease;
+            
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+    @include escritorio{
+        display: unset;
+    }
+    
+}
+
+.texto-conocenos{
+    h2{
+        color:$azul;
+       
+       
+        @include adorno-texto(1rem);
+    }
+    p{
+        
+        color: $azul;
+        text-align: left;
+        @include escritorio{
+            text-align: justify;
+        }
+
+        
+    }
+}
+
+.contenido-filosofia{
+    overflow: hidden;
+    @include tablet{
+        @include grid(2,1fr);
+    }
+}
+.contenedor-texto-filosofia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.contenido-texto-filosofia{
+    margin-right:0;
+    @include tablet{
+        margin-right: 2rem;
+    }
+    h2{
+        color: $azul;
+        text-align: center;
+        @include tablet{
+            text-align: left;
+        }
+        &:first-of-type{
+            margin-top: 0;
+        }
+
+        @include adorno-texto(1rem);
+    }
+    @include escritorio{
+        p{
+            color: $azul;
+            text-align: justify;
+        }
+    }
+   
+
+    
+    .ultimo-filosofia{
+        margin-bottom: 0;
+        padding-bottom: 5rem;
+    }
+    
+}
+
+.imagen-filosofia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .frase-filosofia{
+        p{
+            color: rgba($azul, .5);
+            font-style: italic;
+        }
+    }
+}
+
+/*Valores*/
+.contenedor-valores {
+    overflow: hidden;
+    padding: 5rem;
+    transition: .3s ease all;
+  
+}
+.contenido-valores{
+    @include escritorio{
+        @include grid(3,1fr);
+    }
+ }
+ .texto-izquierda{
+    &::before{
+        content: '+';
+        text-align: center;
+        font-size: 4rem;
+        
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        color: $amarillo;
+        
+    }
+    &:hover{
+        cursor: pointer;
+        
+    }
+ }
+ .parrafo-derecha{
+   @include escritorio{
+    text-align: right;
+   }
+ }
+ .texto-derecha{
+    text-align: left;
+    &::before{
+        content: '+';
+        font-size: 4rem;
+        
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        color: $amarillo;
+      
+        
+    }
+   @include escritorio{
+    &::before{
+        content: '';
+    }
+    text-align: right;
+    &::after{
+        content: '+';
+        font-size: 4rem;
+        
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        color: $amarillo;
+      
+        
+    }
+   }
+   
+
+    &:hover{
+        cursor: pointer;
+        
+    }
+ }
+.icono-plus{
+   font-size: 2rem;
+    @include tablet{
+        font-size: 3rem;
+    }
+ 
+}
+.ocultar-parrafo{
+   display: none;
+}
+//le agregamos la clase 
+.valor.activar .ocultar-parrafo{
+    display: block;
+    animation: slide .5s;
+   
+}
+
+.valores{
+
+    .valor{
+        margin-bottom: 4rem;
+        @include tablet{
+            margin-bottom: 0;
+
+         
+        }
+        h3{
+            color: $azul;
+            width: 100%;
+        }  
+        p{
+            margin-left: 2.2rem;
+            color: $azul;
+            transition: all .3s ease;
+        }
+           
+    }
+}
+
+.valores-imagen{
+    transition: .3s ease all;
+    @include tablet{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 80%;
+        }
+    }
+    @include escritorio{
+
+        img{
+            width: 100%;
+            transition: all .3s ease;
+            &:hover{ 
+                transform: scale(1.2);
+            }
+           
+        }
+      
+       
+    }
+    
+   
+}
+

@@ -1,0 +1,98 @@
+.contenedor-informacion-nosotros{
+  overflow: hidden;
+  padding-top: 5rem;
+ @include tablet{
+  padding-top: 0;
+  height: 100vh;
+  min-height: 80rem;
+ @include direccion-flex-centrar-vertical;
+ }
+}
+.informacion-nosotros {
+  display: grid;
+  @include tablet{
+    @include grid(2,1fr);
+  }
+
+}
+.informacion-nosotros-texto{
+  padding: 1rem;
+  h2{
+    color: $azul;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    text-align: center;
+    @include tablet{
+      text-align: left;
+    }
+  }
+}
+.texto-info-nosotros{
+  
+  h3{
+   
+    color: $amarillo;
+    
+  }
+}
+.contenedor-nosotros-imagen{
+  grid-row: 1/2;
+  @include tablet{
+  grid-row: unset;
+  @include direccion-flex-centrar-vertical;
+  }
+}
+
+
+.ocultar{
+  display: none;
+}
+
+.pantallaCompleta{
+  
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0,0,0,.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: grid;
+  place-items: center; //alinea vertical u horizontalmente
+}
+ .btn-cerrar{
+
+   width: 5rem;
+   height: 5rem;
+   background-color: $azul;
+   @include flex-centrar-ver-hor;
+   font-size: 3rem;
+   border-radius: 50%;
+   margin-top: -10rem;
+   color: #fff;
+ 
+
+    &:hover{
+      cursor: pointer;
+    }
+ }
+ .boton-info-nosotros{
+   a{
+     display: block;
+     text-align: center;
+   }
+   @include tablet{
+     display: inline-block;
+   }
+ }
+.video{
+  max-width: 95%;
+  height: 50%;
+
+  @include tablet{
+    max-width: 100%;
+    height: 550px;
+  }
+}
+  .video{
+     animation: slide 1.3s;
+   }

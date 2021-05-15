@@ -1,0 +1,36 @@
+{
+  "name": "paginaweb_guardianesgolfo",
+  "version": "1.0.0",
+  "description": "Pagina web para una empresa de seguridad privada",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AzaelW3b/PaginaWeb_GuardianesGolfo.git"
+  },
+  "keywords": [
+    "Sass",
+    "Gulp",
+    "JavaScript"
+  ],
+  "author": "Azael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AzaelW3b/PaginaWeb_GuardianesGolfo/issues"
+  },
+  "homepage": "https://github.com/AzaelW3b/PaginaWeb_GuardianesGolfo#readme",
+  "devDependencies": {
+    "ember-cli-materialize": "^0.22.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-webp": "^4.0.1"
+  },
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2"
+  }
+}

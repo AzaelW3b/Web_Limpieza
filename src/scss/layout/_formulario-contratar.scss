@@ -1,0 +1,141 @@
+.ocultar-formulario{
+    display: none;
+}
+.contenedor-formulario-contratar{
+    display: flex;
+    justify-content: center;
+}
+.formulario-contratar{
+    overflow-y: scroll;
+    animation: slideX .3s ease;
+    background-color: $blanco;
+    -webkit-box-shadow: 10px 13px 19px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 13px 19px -14px rgba(0,0,0,0.75);
+    box-shadow: 10px 13px 19px -14px rgba(0,0,0,0.75);
+    padding: 2rem;
+    @include tablet{
+        padding: 0  5rem  5rem 5rem;
+    }
+ 
+    width: 90%;
+    @include tablet{
+        width: 80%;
+    }
+}
+
+.encabezado-formulario{
+    display: flex;
+    justify-content: flex-end;
+}
+.texto-encabezado-formulario{
+    p{
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $azul;
+        margin-left: 2rem;
+
+        @include tablet{
+            margin-left: 0;
+        }
+    }
+
+}
+.boton-cerrar{
+    p{
+        font-size: 3rem;
+        font-weight: bold;
+        transition: all .3s ease;
+
+
+        &:hover{
+            cursor: pointer;
+            color: $amarillo;
+        }
+    }
+}
+.contenedor-inputs-contratar{
+  
+   @include tablet{
+    @include grid(2,1fr);
+    .textarea{
+        grid-column: 1/3;
+    }
+   }
+}
+
+.inputs-formulario-contratar{
+    input{
+        margin-bottom: 3rem;
+        width: 95%;
+        padding: 1rem 1rem;
+        font-size: 1.8rem;
+        border: none;
+        border: 1px solid $azul;
+        outline: 0;
+        font-weight: bold;
+        color: $azul;
+        transition: all .3s ease;
+        &:focus{
+            border: 1px solid $amarillo;
+            transition: all .3s ease;
+            transform: scale(1.1);
+        }
+        
+        &:focus{
+            border-bottom: 2px solid $amarillo;
+            transition: all .3s ease;
+            transform: scale(1.1);
+        }
+    }
+    textarea{
+        outline: 0;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 15rem;
+        max-height: 15rem;
+        font-weight: bold;
+        color: $azul;
+        
+    }
+    label{
+        margin-bottom: 1rem;
+        display: block;
+        font-size: 2rem;
+        color: rgb(150, 147, 147);
+       
+    }
+}
+.boton-formulario-contratar{
+    .boton-contratar{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.boton-deshabilitado{
+    opacity: .5;
+
+    &:hover{
+        cursor: unset !important;
+        background-color: $azul;
+    }
+}
+.mensaje-error{
+    background-color: #ff3333;
+    color: $blanco;
+    font-weight: $bold;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+.mensaje-valido{
+    background-color:  #22bb33;
+    color:$blanco;
+    padding: 1rem;
+    text-align: center;
+    font-weight: $bold;
+    
+}

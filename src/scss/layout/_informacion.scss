@@ -1,0 +1,85 @@
+.contenedor-beneficios{
+    overflow: hidden;
+  @include tabletAncha{
+      @include grid(2,1fr);
+  } 
+  @include tablet{
+    @include grid(2,1fr);
+  }
+}
+
+.texto-beneficios{
+    background: url(/build/img/contacto.jpg) no-repeat fixed center center;
+    height: 800px;
+    background-size: cover;
+    position: relative;
+    @include direccion-flex-centrar-vertical;
+    @include difuminado-transparente($azulTransparente);
+    h2{
+        position: relative;
+        z-index: 1;
+        color:$blanco;
+        text-align: center;
+        
+    }
+}
+.boton-beneficios{
+    z-index: 1;
+    @include centrar-justify;
+}
+.iconos-beneficios{
+  
+    @include tabletAncha{
+        @include grid(2,1fr);
+    }
+
+   @include tablet{
+       z-index: -1;
+       @include grid(2,1fr);
+   }
+
+  @include escritorio{
+      margin-left: 3rem;
+      @include grid(2,1fr);
+  }
+}
+.icono{
+    margin-top: 6rem;
+    text-align: center;
+    .icono-info{
+       
+       color: $azul;
+       @include telefono{
+           font-size: 6rem;
+       }
+       @include tabletAncha{
+           font-size: 6rem;
+       }
+      
+       @include tablet{
+         font-size: 8rem;
+       }
+       
+    }
+
+    .txt-beneficios{
+        p{
+            font-weight: $bold;
+            text-align: center;
+            @include tabletAncha{
+                margin-left:1rem;
+            }
+            @include tablet{
+                margin-left: 0;
+            }
+           
+        }
+        span{
+            color: $amarillo;
+            display: block;
+            @include escritorio{
+                display: unset;
+            }
+        }
+    }
+}
