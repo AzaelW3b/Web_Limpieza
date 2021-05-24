@@ -674,7 +674,7 @@ a {
 }
 
 .cabezera {
-  background: url(/src/img/bg8.jpg) no-repeat center center fixed;
+  background: url(/src/img/bg_limpieza.jpg) no-repeat center right fixed;
   background-size: cover;
   height: 100vh;
   min-height: 80rem;
@@ -684,7 +684,7 @@ a {
 
 @media (min-width: 1200px) {
   .cabezera {
-    background-image: url(/build/img/bg.jpg);
+    background-image: url(/src/img/bg_limpieza.jpg);
     background-position: top center;
   }
 }
@@ -713,6 +713,10 @@ a {
   }
 }
 
+.contenido-texto {
+  margin-top: 10rem;
+}
+
 .contenido-texto h1 {
   text-transform: capitalize;
   color: #ffffff;
@@ -728,6 +732,12 @@ a {
 
 .contenido-texto h1 span {
   color: #EFB810;
+}
+
+@media (min-width: 768px) {
+  .contenido-texto {
+    margin-top: 0;
+  }
 }
 
 .contenido-logo img {
@@ -771,7 +781,7 @@ a {
 }
 
 .texto-beneficios {
-  background: url(/build/img/contacto.jpg) no-repeat fixed center center;
+  background: url(/src/img/trabajaNosotros.jpg) no-repeat center center;
   height: 800px;
   background-size: cover;
   position: relative;
@@ -888,6 +898,15 @@ a {
 
 @media (min-width: 768px) {
   .contenedor-informacion-nosotros {
+    background-image: url(/src/img/burbujas.svg);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 768px) {
+  .contenedor-informacion-nosotros {
     padding-top: 0;
     height: 100vh;
     min-height: 80rem;
@@ -898,7 +917,14 @@ a {
 }
 
 .informacion-nosotros {
+  background-color: #ffffff;
   display: grid;
+}
+
+@media (min-width: 1200px) {
+  .informacion-nosotros {
+    margin-top: 3rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -926,6 +952,7 @@ a {
 }
 
 .texto-info-nosotros h3 {
+  text-transform: uppercase;
   color: #EFB810;
 }
 
@@ -985,172 +1012,90 @@ a {
   }
 }
 
-.video {
-  max-width: 95%;
-  height: 50%;
+.contenedor-ventajas {
+  margin-top: 5rem;
 }
 
 @media (min-width: 768px) {
-  .video {
-    max-width: 100%;
-    height: 550px;
-  }
-}
-
-.video {
-  animation: slide 1.3s;
-}
-
-.contenedor-historia {
-  overflow: hidden;
-  background: linear-gradient(90deg, #020024 0%, #122348 35%, #122348 100%);
-  background-attachment: fixed;
-  padding-top: 5rem;
-}
-
-@media (min-width: 1200px) {
-  .contenedor-historia {
-    padding-top: 0;
-  }
-}
-
-.contenedor-historia h2 {
-  color: #ffffff;
-  text-align: center;
-  padding-top: 4rem;
-  margin-bottom: 0;
-}
-
-.contenido-historia {
-  padding: 4rem;
-}
-
-@media (min-width: 1200px) {
-  .contenido-historia {
+  .contenedor-ventajas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-}
-
 @media (min-width: 1200px) {
-  .card {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.card .icono-card {
-  margin: 0 auto;
-  border-radius: 50%;
-  border: 4px solid #EFB810;
-  padding: 4.5rem;
-  display: inline-block;
-  transition: background-color .3s ease;
-}
-
-@media (min-width: 1200px) {
-  .card .icono-card {
-    display: unset;
-    margin-right: 2rem;
-  }
-}
-
-.card .icono-card i {
-  font-size: 4.5rem;
-  color: #EFB810;
-}
-
-.card .icono-card:hover {
-  background-color: #EFB810;
-}
-
-.card .icono-card:hover i {
-  color: #ffffff;
-}
-
-.texto-card p {
-  font-size: 1.8rem;
-}
-
-.texto-card h3, .texto-card p {
-  color: #ffffff;
-  text-align: center;
-}
-
-@media (min-width: 1200px) {
-  .texto-card h3, .texto-card p {
-    text-align: left;
-  }
-}
-
-.imagen-historia {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.contenedor-informacion-servicios {
-  overflow: hidden;
-}
-
-@media (min-width: 1200px) {
-  .contenedor-informacion-servicios {
+  .contenedor-ventajas {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
   }
 }
 
-.informacion-servicios {
-  padding: 1rem;
-}
-
-@media (min-width: 1200px) {
-  .informacion-servicios {
-    border: 1.5px solid #122348;
-  }
-}
-
-.informacion-servicio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.ventaja {
   margin-bottom: 2rem;
-  text-align: center;
-}
-
-.informacion-servicio p {
-  color: #122348;
+  border: 5px solid #F7FDFB;
+  padding: 1rem;
+  transition: all .3s ease-in-out;
 }
 
 @media (min-width: 768px) {
-  .informacion-servicio p {
-    width: 75%;
+  .ventaja {
+    margin-bottom: 0;
   }
 }
 
-@media (min-width: 1200px) {
-  .informacion-servicio p {
-    width: 90%;
-  }
+.ventaja:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.icono-servicio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icono-servicio h3 {
+.ventaja:hover i {
   color: #EFB810;
-  text-transform: capitalize;
+}
+
+.icono-ventaja {
+  display: flex;
+  justify-content: center;
+}
+
+.icono-ventaja i {
+  font-size: 5rem;
+  color: #122348;
+}
+
+.texto-ventaja h3, .texto-ventaja p {
+  color: #122348;
+}
+
+.texto-ventaja h3 {
+  text-align: center;
+}
+
+.texto-ventaja p {
+  text-align: center;
+}
+
+.ventaja.activar .ocultar-parrafo {
+  display: block;
+  animation: slide .5s;
+}
+
+.contenido-servicio {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.lista-beneficios .beneficio {
+  display: flex;
+}
+
+.imagen-beneficio img {
+  width: 10rem;
+}
+
+.texto-beneficio {
+  margin-right: 2rem;
 }
 
 .informacion-contacto {

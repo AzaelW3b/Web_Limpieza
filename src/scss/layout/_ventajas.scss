@@ -1,0 +1,63 @@
+.contenedor-ventajas{
+    margin-top:$separacion;
+    @include tablet{
+        @include grid(2,1fr);
+        gap: 1rem;
+    }
+    @include escritorio{
+        @include grid(4,1fr);
+        gap: 2rem;
+    }
+}
+.ventaja{
+    margin-bottom: 2rem;
+    border:5px solid $azulBlanco;
+    padding: 1rem;
+    transition:all .3s ease-in-out;
+    
+
+
+    @include tablet {
+        margin-bottom: 0;
+    }
+
+    &:hover{
+       i{
+      
+        color:$amarillo;
+       }
+        transform: scale(1.1);
+        cursor: pointer;
+       
+    }
+   
+
+}
+.icono-ventaja{
+    display: flex;
+    justify-content: center;
+    i{
+        font-size: 5rem;
+        color: $azul;
+
+        
+    }
+}
+
+.texto-ventaja{
+    h3,p{
+        color: $azul;
+    }
+    h3{
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+}
+
+.ventaja.activar .ocultar-parrafo{
+    display: block;
+    animation: slide .5s;
+   
+}

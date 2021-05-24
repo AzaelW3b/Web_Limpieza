@@ -1,8 +1,8 @@
 .cabezera{
-    background: url(/src/img/bg8.jpg) no-repeat center center fixed;
+    background: url(/src/img/bg_limpieza.jpg) no-repeat center right fixed;
     background-size: cover;
     @include escritorio{
-        background-image: url(/build/img/bg.jpg);
+        background-image: url(/src/img/bg_limpieza.jpg);
         background-position: top center;
      
     }
@@ -27,6 +27,7 @@
 
 
 .contenido-texto{
+    margin-top: 10rem;
     h1{
         text-transform: capitalize;
         color:$blanco;
@@ -42,6 +43,9 @@
         }
 
         
+    }
+    @include tablet{
+        margin-top:0;
     }
 
 }

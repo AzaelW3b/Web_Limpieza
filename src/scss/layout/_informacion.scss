@@ -9,7 +9,7 @@
 }
 
 .texto-beneficios{
-    background: url(/build/img/contacto.jpg) no-repeat fixed center center;
+    background: url(/src/img/trabajaNosotros.jpg) no-repeat  center center;
     height: 800px;
     background-size: cover;
     position: relative;
@@ -46,21 +46,40 @@
 .icono{
     margin-top: 6rem;
     text-align: center;
-    .icono-info{
+     .icono-info{
        
        color: $azul;
        @include telefono{
-           font-size: 6rem;
-       }
-       @include tabletAncha{
+            font-size: 6rem;
+        }
+        @include tabletAncha{
            font-size: 6rem;
        }
       
-       @include tablet{
-         font-size: 8rem;
-       }
-       
+      @include tablet{
+      font-size: 8rem;
     }
+       
+     }
+
+    // .icono-info{
+    //     @include telefono{
+    //         img{
+    //             width: 6rem;
+    //         }
+    //     }
+    //     @include tabletAncha{
+    //         img{
+    //             width: 6rem;
+    //         }
+    //     }
+
+    //     @include tablet{
+    //         img{
+    //             width: 8rem;
+    //         }
+    //     }
+    // }
 
     .txt-beneficios{
         p{
