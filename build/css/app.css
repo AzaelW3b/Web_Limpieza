@@ -1064,6 +1064,10 @@ a {
   color: #122348;
 }
 
+.texto-ventaja {
+  transition: all .3s ease-in-out;
+}
+
 .texto-ventaja h3, .texto-ventaja p {
   color: #122348;
 }
@@ -1076,14 +1080,26 @@ a {
   text-align: center;
 }
 
-.ventaja.activar .ocultar-parrafo {
-  display: block;
-  animation: slide .5s;
+.contenido-servicio {
+  display: flex;
+  flex-direction: column;
 }
 
-.contenido-servicio {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.contenido-servicio .imagenes-servicio {
+  order: -1;
+}
+
+@media (min-width: 768px) {
+  .contenido-servicio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contenido-servicio .imagenes-servicio {
+    grid-column: 2/3;
+  }
+  .contenido-servicio .texto-servicio {
+    grid-row: 1/2;
+  }
 }
 
 .lista-beneficios .beneficio {
@@ -1094,8 +1110,52 @@ a {
   width: 10rem;
 }
 
+.texto-servicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.texto-servicio h2 {
+  color: #122348;
+}
+
+.texto-servicio h2::before {
+  content: '>';
+  color: #EFB810;
+  margin-right: 1rem;
+  font-weight: 700;
+}
+
 .texto-beneficio {
   margin-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .imagenes-servicio {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .imagenes-servicio {
+    display: unset;
+  }
+}
+
+.boton-beneficio {
+  order: 4;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .boton-beneficio {
+    display: unset;
+  }
 }
 
 .informacion-contacto {
@@ -1243,11 +1303,12 @@ a {
 
 .banner-nosotros {
   padding-top: 5rem;
-  background: url(/src/img/bannerNosotros.jpg) no-repeat fixed center center;
+  background: url(/src/img/nosotros.jpg) no-repeat fixed center center;
   height: 65rem;
   background-size: cover;
   position: relative;
-  padding-top: 0;
+  background-position: right;
+  padding-top: 10rem;
   height: 45rem;
 }
 
@@ -1263,6 +1324,7 @@ a {
 
 @media (min-width: 768px) {
   .banner-nosotros {
+    background-position: top;
     padding-top: 5rem;
     height: 90rem;
   }
@@ -1368,7 +1430,7 @@ a {
 
 @media (min-width: 1200px) {
   .texto-conocenos p {
-    text-align: justify;
+    text-align: left;
   }
 }
 
@@ -1424,7 +1486,6 @@ a {
 @media (min-width: 1200px) {
   .contenido-texto-filosofia p {
     color: #122348;
-    text-align: justify;
   }
 }
 
@@ -1459,18 +1520,23 @@ a {
   }
 }
 
-.texto-izquierda::before {
-  content: '+';
-  text-align: center;
-  font-size: 4rem;
-  display: inline-block;
-  width: 4rem;
-  height: 4rem;
-  color: #EFB810;
+.icono-plus {
+  transition: .3s ease all;
 }
 
-.texto-izquierda:hover {
+.icono-plus:hover {
   cursor: pointer;
+  color: #EFB810 !important;
+}
+
+.texto-izquierda {
+  transition: all .3s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.texto-izquierda img {
+  margin-right: 1rem;
 }
 
 @media (min-width: 1200px) {
@@ -1480,37 +1546,30 @@ a {
 }
 
 .texto-derecha {
+  display: flex;
   text-align: left;
-}
-
-.texto-derecha::before {
-  content: '+';
-  font-size: 4rem;
-  display: inline-block;
-  width: 4rem;
-  height: 4rem;
-  color: #EFB810;
 }
 
 @media (min-width: 1200px) {
   .texto-derecha {
     text-align: right;
-  }
-  .texto-derecha::before {
-    content: '';
-  }
-  .texto-derecha::after {
-    content: '+';
-    font-size: 4rem;
-    display: inline-block;
-    width: 4rem;
-    height: 4rem;
-    color: #EFB810;
+    display: block;
   }
 }
 
 .texto-derecha:hover {
   cursor: pointer;
+}
+
+.texto-derecha img {
+  margin-right: 1rem;
+  order: -1;
+}
+
+@media (min-width: 1200px) {
+  .texto-derecha img {
+    margin-left: 1rem;
+  }
 }
 
 .icono-plus {
@@ -1527,9 +1586,17 @@ a {
   display: none;
 }
 
-.valor.activar .ocultar-parrafo {
+.contenedor-padre.activar .ocultar-parrafo {
   display: block;
   animation: slide .5s;
+}
+
+.contenedor-padre img {
+  transition: all .3s ease-in-out;
+}
+
+.contenedor-padre.activar img {
+  transform: rotate(45deg);
 }
 
 .valores .valor {

@@ -1,9 +1,11 @@
 .banner-nosotros{
-    @include banner-bg-imagen( url(/src/img/bannerNosotros.jpg));
+    @include banner-bg-imagen( url(/src/img/nosotros.jpg));
+    background-position: right;
     @include difuminado-transparente($negroTransparente);
-    padding-top: 0;
+    padding-top: 10rem;
     height: 45rem;
     @include tablet{
+        background-position: top;
         padding-top: 5rem;
         height: 90rem;
     }
@@ -80,7 +82,7 @@
         color: $azul;
         text-align: left;
         @include escritorio{
-            text-align: justify;
+            text-align: left;
         }
 
         
@@ -119,7 +121,7 @@
     @include escritorio{
         p{
             color: $azul;
-            text-align: justify;
+           
         }
     }
    
@@ -158,63 +160,50 @@
         @include grid(3,1fr);
     }
  }
- .texto-izquierda{
-    &::before{
-        content: '+';
-        text-align: center;
-        font-size: 4rem;
-        
-        display: inline-block;
-        width: 4rem;
-        height: 4rem;
-        color: $amarillo;
-        
-    }
+ .icono-plus{
+     transition: .3s ease all;
     &:hover{
-        cursor: pointer;
-        
+        cursor:pointer;
+        color: $amarillo !important;
     }
  }
+ .texto-izquierda{
+     transition: all .3s ease-in-out;
+     display: flex;
+     align-items: center;
+     img{
+         margin-right: 1rem;
+        
+     }
+        
+     
+ }
+
  .parrafo-derecha{
    @include escritorio{
     text-align: right;
    }
  }
  .texto-derecha{
+    display:flex;
     text-align: left;
-    &::before{
-        content: '+';
-        font-size: 4rem;
-        
-        display: inline-block;
-        width: 4rem;
-        height: 4rem;
-        color: $amarillo;
-      
-        
-    }
    @include escritorio{
-    &::before{
-        content: '';
-    }
     text-align: right;
-    &::after{
-        content: '+';
-        font-size: 4rem;
-        
-        display: inline-block;
-        width: 4rem;
-        height: 4rem;
-        color: $amarillo;
-      
-        
-    }
+    display: block;
    }
    
 
     &:hover{
         cursor: pointer;
         
+    }
+   
+    img{
+        margin-right: 1rem;
+        order: -1;
+        @include escritorio{
+            margin-left: 1rem;
+        }
     }
  }
 .icono-plus{
@@ -228,15 +217,26 @@
    display: none;
 }
 //le agregamos la clase 
-.valor.activar .ocultar-parrafo{
+.contenedor-padre.activar .ocultar-parrafo{
     display: block;
     animation: slide .5s;
+   
+}
+.contenedor-padre img{
+    transition: all .3s ease-in-out;
+}
+
+//rotamos la imagen del signo de mas 45 grados, para que parezca una cruz
+.contenedor-padre.activar img{
+    
+    transform: rotate(45deg);
    
 }
 
 .valores{
 
     .valor{
+      
         margin-bottom: 4rem;
         @include tablet{
             margin-bottom: 0;

@@ -1,5 +1,21 @@
 .contenido-servicio{
-    @include grid(2,1fr);
+    display:flex;
+    flex-direction: column;
+    .imagenes-servicio{
+        order: -1;
+    }
+   
+    @include tablet{
+       
+        @include grid(2,1fr);
+
+        .imagenes-servicio{
+            grid-column: 2/3;
+        }
+        .texto-servicio{
+            grid-row: 1/2;
+        }
+    }
 }
 .lista-beneficios{
     .beneficio{
@@ -12,6 +28,38 @@
         width:10rem;
     }
 }
+.texto-servicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2{
+        color:$azul;
+        
+        @include adorno-texto(1rem);
+    }
+}
 .texto-beneficio{
     margin-right: 2rem;
+
+}
+.imagenes-servicio{
+   
+    @include tablet{
+        display: flex;
+        align-items:center;
+    }
+    @include escritorio{
+        display: unset;
+    }
+}
+.boton-beneficio{
+    order: 4;
+    margin-top: 2rem;
+    display: flex;
+    justify-content:center;
+    margin-bottom: 2rem;
+    @include escritorio{
+        display: unset;
+    }
+
 }

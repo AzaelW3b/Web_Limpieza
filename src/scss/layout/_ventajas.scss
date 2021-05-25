@@ -45,6 +45,7 @@
 }
 
 .texto-ventaja{
+    transition:all .3s ease-in-out;
     h3,p{
         color: $azul;
     }
@@ -54,10 +55,4 @@
     p{
         text-align: center;
     }
-}
-
-.ventaja.activar .ocultar-parrafo{
-    display: block;
-    animation: slide .5s;
-   
 }
