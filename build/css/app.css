@@ -898,7 +898,7 @@ a {
 
 @media (min-width: 768px) {
   .contenedor-informacion-nosotros {
-    background-image: url(/src/img/burbujas.svg);
+    background-image: url(/src/img/burbujas.png);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -1507,12 +1507,6 @@ a {
 }
 
 /*Valores*/
-.contenedor-valores {
-  overflow: hidden;
-  padding: 5rem;
-  transition: .3s ease all;
-}
-
 @media (min-width: 1200px) {
   .contenido-valores {
     display: grid;

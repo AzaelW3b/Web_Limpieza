@@ -149,12 +149,7 @@
 }
 
 /*Valores*/
-.contenedor-valores {
-    overflow: hidden;
-    padding: 5rem;
-    transition: .3s ease all;
-  
-}
+
 .contenido-valores{
     @include escritorio{
         @include grid(3,1fr);
