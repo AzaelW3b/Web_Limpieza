@@ -1,5 +1,6 @@
 .vista-servicios{
-    @include banner-bg-imagen( url(/src/img/limpieza.jpg));
+    @include banner-bg-imagen( url(/src/img/nosotros1.jpg));
+    background-position: top;
     @include difuminado-transparente($negroTransparente);
   
 }
@@ -35,12 +36,13 @@
     
 }
 .menu-servicio{
-
+    padding: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
     @include tablet{
+        padding: 0;
         margin-bottom: 0;
         flex-direction: column;
         align-items: center;
@@ -56,22 +58,20 @@
     }
     opacity: .5;
     background-color: $azulBlanco;
-    svg{
+    i{
         transition: all .3s ease;
-         width: 6.4rem;
-         height: 6.4rem;
+        font-size: 3rem;
         @include tablet{
-            width: 8.4rem;
-            height: 8.4rem;
+           font-size: 8.4rem;
         }
         @include escritorio{
-            width: 10rem;
-             height: 10rem;
+           font-size: 9rem;
         }
     
     }
     p{
         font-size: 1.8rem;
+        text-align: center;
         @include tablet{
             font-size: 2.2rem;
             display: none;
@@ -82,11 +82,10 @@
     &:hover{
         opacity: 1;
         cursor: pointer;
-        path{
-            fill: $amarillo;
-        }
-        svg{
+        
+        i{
             transform: scale(1.2);
+            color: $amarillo;
         }
         p{
             display: block;
@@ -99,11 +98,10 @@
         border: 1.5px solid $amarillo;
         opacity: 1;
         cursor: pointer;
-        path{
-            fill: $amarillo;
-        }
-        svg{
+       
+        i{
             transform: scale(1.2);
+            color:$amarillo;
         }
         p{
             display: block;
@@ -157,12 +155,13 @@
          
      }
 }
-.ventajas-servicios{
+.lista-servicios{
     padding-left:0;
 
     li{
        color: $amarillo; 
        display: flex;
+       align-items: center;
        list-style: none;
     }
     p{
@@ -171,12 +170,13 @@
         font-size: 2rem;
 
     }
-    path{
-        fill: $amarillo;
+    i{
+       color:$amarillo;
+      
     }
-    svg{
+    i{
         margin-right: 1rem;
-        width: 2rem;
+        font-size: 2.2rem;
         order: -1;
     }
 }

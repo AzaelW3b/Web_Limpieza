@@ -1640,10 +1640,11 @@ a {
 
 .vista-servicios {
   padding-top: 5rem;
-  background: url(/src/img/limpieza.jpg) no-repeat fixed center center;
+  background: url(/src/img/nosotros1.jpg) no-repeat fixed center center;
   height: 65rem;
   background-size: cover;
   position: relative;
+  background-position: top;
 }
 
 .vista-servicios::before {
@@ -1707,6 +1708,7 @@ a {
 }
 
 .menu-servicio {
+  padding: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1719,6 +1721,7 @@ a {
 
 @media (min-width: 768px) {
   .menu-servicio {
+    padding: 0;
     margin-bottom: 0;
     flex-direction: column;
     align-items: center;
@@ -1738,28 +1741,26 @@ a {
   }
 }
 
-.menu-servicio svg {
+.menu-servicio i {
   transition: all .3s ease;
-  width: 6.4rem;
-  height: 6.4rem;
+  font-size: 3rem;
 }
 
 @media (min-width: 768px) {
-  .menu-servicio svg {
-    width: 8.4rem;
-    height: 8.4rem;
+  .menu-servicio i {
+    font-size: 8.4rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .menu-servicio svg {
-    width: 10rem;
-    height: 10rem;
+  .menu-servicio i {
+    font-size: 9rem;
   }
 }
 
 .menu-servicio p {
   font-size: 1.8rem;
+  text-align: center;
   color: #122348;
   animation: slide .3s ease;
 }
@@ -1776,12 +1777,9 @@ a {
   cursor: pointer;
 }
 
-.menu-servicio:hover path {
-  fill: #EFB810;
-}
-
-.menu-servicio:hover svg {
+.menu-servicio:hover i {
   transform: scale(1.2);
+  color: #EFB810;
 }
 
 .menu-servicio:hover p {
@@ -1794,12 +1792,9 @@ a {
   cursor: pointer;
 }
 
-.servicio-activo path {
-  fill: #EFB810;
-}
-
-.servicio-activo svg {
+.servicio-activo i {
   transform: scale(1.2);
+  color: #EFB810;
 }
 
 .servicio-activo p {
@@ -1853,29 +1848,30 @@ a {
   font-size: 2rem;
 }
 
-.ventajas-servicios {
+.lista-servicios {
   padding-left: 0;
 }
 
-.ventajas-servicios li {
+.lista-servicios li {
   color: #EFB810;
   display: flex;
+  align-items: center;
   list-style: none;
 }
 
-.ventajas-servicios p {
+.lista-servicios p {
   color: #122348;
   margin: 1rem 0;
   font-size: 2rem;
 }
 
-.ventajas-servicios path {
-  fill: #EFB810;
+.lista-servicios i {
+  color: #EFB810;
 }
 
-.ventajas-servicios svg {
+.lista-servicios i {
   margin-right: 1rem;
-  width: 2rem;
+  font-size: 2.2rem;
   order: -1;
 }
 
@@ -1907,145 +1903,267 @@ a {
   }
 }
 
-.ocultar-formulario {
-  display: none;
+/*.ocultar-formulario{
+    display: none;
+}
+.bg-formulario{
+    background-image:url("/src/img/bg_limpieza.jpg");
+    height:100vh;
+}
+.contenedor-formulario-contratar{
+    display: flex;
+    justify-content: center;
+
+}
+.formulario-contratar{
+   
+    animation: slideX .3s ease;
+    background-color: $blanco;
+    -webkit-box-shadow: 10px 13px 19px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 13px 19px -14px rgba(0,0,0,0.75);
+    box-shadow: 10px 13px 19px -14px rgba(0,0,0,0.75);
+    padding: 2rem;
+    @include tablet{
+        padding: 0  5rem  5rem 5rem;
+    }
+ 
+    width: 90%;
+    @include tablet{
+        width: 80%;
+    }
 }
 
-.contenedor-formulario-contratar {
-  display: flex;
-  justify-content: center;
+.encabezado-formulario{
+    display: flex;
+    justify-content: flex-end;
+}
+.texto-encabezado-formulario{
+    p{
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $azul;
+        margin-left: 2rem;
+
+        @include tablet{
+            margin-left: 0;
+        }
+    }
+
+}
+.boton-cerrar{
+    p{
+        font-size: 3rem;
+        font-weight: bold;
+        transition: all .3s ease;
+
+
+        &:hover{
+            cursor: pointer;
+            color: $amarillo;
+        }
+    }
+}
+.contenedor-inputs-contratar{
+  
+   @include tablet{
+    @include grid(2,1fr);
+    .textarea{
+        grid-column: 1/3;
+    }
+   }
 }
 
-.formulario-contratar {
-  overflow-y: scroll;
-  animation: slideX .3s ease;
-  background-color: #ffffff;
-  -webkit-box-shadow: 10px 13px 19px -14px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 13px 19px -14px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 13px 19px -14px rgba(0, 0, 0, 0.75);
-  padding: 2rem;
-  width: 90%;
+.inputs-formulario-contratar{
+    input{
+        margin-bottom: 3rem;
+        width: 95%;
+        padding: 1rem 1rem;
+        font-size: 1.8rem;
+        border: none;
+        border: 1px solid $azul;
+        outline: 0;
+        font-weight: bold;
+        color: $azul;
+        transition: all .3s ease;
+        &:focus{
+            border: 1px solid $amarillo;
+            transition: all .3s ease;
+            transform: scale(1.1);
+        }
+        
+        &:focus{
+            border-bottom: 2px solid $amarillo;
+            transition: all .3s ease;
+            transform: scale(1.1);
+        }
+    }
+    textarea{
+        outline: 0;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 15rem;
+        max-height: 15rem;
+        font-weight: bold;
+        color: $azul;
+        
+    }
+    label{
+        margin-bottom: 1rem;
+        display: block;
+        font-size: 2rem;
+        color: rgb(150, 147, 147);
+       
+    }
+}
+.boton-formulario-contratar{
+    .boton-contratar{
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }
 
-@media (min-width: 768px) {
-  .formulario-contratar {
-    padding: 0  5rem  5rem 5rem;
-  }
+.boton-deshabilitado{
+    opacity: .5;
+
+    &:hover{
+        cursor: unset !important;
+        background-color: $azul;
+    }
+}
+.mensaje-error{
+    background-color: #ff3333;
+    color: $blanco;
+    font-weight: $bold;
+    padding: 1rem;
+    text-align: center;
+
 }
 
-@media (min-width: 768px) {
-  .formulario-contratar {
-    width: 80%;
-  }
+.mensaje-valido{
+    background-color:  #22bb33;
+    color:$blanco;
+    padding: 1rem;
+    text-align: center;
+    font-weight: $bold;
+    
 }
-
-.encabezado-formulario {
+*/
+.cerrar-form {
   display: flex;
   justify-content: flex-end;
 }
 
-.texto-encabezado-formulario p {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #122348;
-  margin-left: 2rem;
+.cerrar-form img {
+  width: 2.2rem;
+  transform: rotate(45deg);
 }
 
-@media (min-width: 768px) {
-  .texto-encabezado-formulario p {
-    margin-left: 0;
-  }
-}
-
-.boton-cerrar p {
-  font-size: 3rem;
-  font-weight: bold;
-  transition: all .3s ease;
-}
-
-.boton-cerrar p:hover {
+.cerrar-form img:hover {
   cursor: pointer;
-  color: #EFB810;
+}
+
+.formulario-contratar {
+  background-color: #ffffff;
+  -webkit-box-shadow: 10px 13px 19px -14px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 13px 19px -14px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 13px 19px -14px rgba(0, 0, 0, 0.75);
 }
 
 @media (min-width: 768px) {
-  .contenedor-inputs-contratar {
+  .formulario-contratar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .contenedor-inputs-contratar .textarea {
-    grid-column: 1/3;
-  }
 }
 
-.inputs-formulario-contratar input {
-  margin-bottom: 3rem;
-  width: 95%;
-  padding: 1rem 1rem;
-  font-size: 1.8rem;
-  border: none;
-  border: 1px solid #122348;
-  outline: 0;
-  font-weight: bold;
+.ocultar-formulario {
+  display: none;
+}
+
+.bg-formulario {
+  background-image: url("/src/img/bg_limpieza.jpg");
+  background-position: right;
+  background-size: cover;
+  height: auto;
+  position: relative;
+}
+
+.bg-formulario::before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.texto-bg-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  z-index: 1;
+}
+
+.texto-bg-formulario h3, .texto-bg-formulario p {
+  color: #ffffff;
+}
+
+.contenedor-formulario {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.titulo-formulario p {
   color: #122348;
-  transition: all .3s ease;
-}
-
-.inputs-formulario-contratar input:focus {
-  border: 1px solid #EFB810;
-  transition: all .3s ease;
-  transform: scale(1.1);
-}
-
-.inputs-formulario-contratar input:focus {
-  border-bottom: 2px solid #EFB810;
-  transition: all .3s ease;
-  transform: scale(1.1);
-}
-
-.inputs-formulario-contratar textarea {
-  outline: 0;
-  margin-bottom: 2rem;
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 15rem;
-  max-height: 15rem;
-  font-weight: bold;
-  color: #122348;
+  font-weight: 700;
+  text-align: center;
 }
 
 .inputs-formulario-contratar label {
-  margin-bottom: 1rem;
   display: block;
-  font-size: 2rem;
-  color: #969393;
+  margin-bottom: 1.5rem;
+  color: #122348;
+  font-size: 1.8rem;
 }
 
-.boton-formulario-contratar .boton-contratar:hover {
+.inputs-formulario-contratar input, .inputs-formulario-contratar textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #122348;
+  outline: 0;
+  padding: .8rem;
+}
+
+.inputs-formulario-contratar textarea {
+  resize: none;
+}
+
+.boton-formulario-contratar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.boton-formulario-contratar input {
+  border: none;
+}
+
+.boton-formulario-contratar input:hover {
   cursor: pointer;
 }
 
-.boton-deshabilitado {
-  opacity: .5;
+.ocultar-mensaje {
+  display: none;
 }
 
-.boton-deshabilitado:hover {
-  cursor: unset !important;
-  background-color: #122348;
-}
-
-.mensaje-error {
-  background-color: #ff3333;
-  color: #ffffff;
-  font-weight: 700;
-  padding: 1rem;
-  text-align: center;
-}
-
-.mensaje-valido {
-  background-color: #22bb33;
-  color: #ffffff;
-  padding: 1rem;
-  text-align: center;
-  font-weight: 700;
+.msj-error {
+  font-size: 1.8rem;
+  color: #ff3333;
 }

@@ -1,7 +1,6 @@
 const nombre = document.querySelector('#nombre');
 const correo = document.querySelector('#correo');
 const telefono = document.querySelector('#telefono');
-const servicio = document.querySelector('#servicio');
 const mensaje = document.querySelector('#mensaje');
 const formulario = document.querySelector('.formulario-contratar');
 const boton = document.querySelector('.boton-contratar');
@@ -10,7 +9,8 @@ const contenedorServicio = document.querySelector('.contenedor-formulario-contra
 const expresionRegular = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const nombreER = new RegExp('^[a-zA-Z Ñ-ñ]+$');
 const body1 = document.querySelector('body');
-const btnCerrar = document.querySelector('.boton-cerrar p');
+const btnCerrar = document.querySelector('.boton-cerrar');
+const msjError = document.querySelector('.msj-error');
 
 document.addEventListener('DOMContentLoaded', () => {
     iniciarApp();
@@ -27,7 +27,6 @@ function eventosFormulario() {
     nombre.addEventListener('blur', validarFormulario);
     correo.addEventListener('blur', validarFormulario);
     telefono.addEventListener('blur', validarFormulario);
-    servicio.addEventListener('blur', validarFormulario);
     mensaje.addEventListener('blur', validarFormulario);
     formulario.addEventListener('submit',enviarEmail);
 }
@@ -37,12 +36,14 @@ function validarFormulario(e) {
 
     if(nombre.value === ''){
         eliminarMensajesError();
-        mensajeUsuario(nombre,'error','El nombre no debe ir vacio');
+        msjError.classList.remove('ocultar-mensaje');
+        agregarTexto('Debes ingresar un nombre');
+      //  mensajeUsuario(nombre,'error','El nombre no debe ir vacio');
 
     }else if(!nombreER.test(nombre.value)){
         eliminarMensajesError();
-        mensajeUsuario(nombre,'error',`El nombre ${nombre.value} es invalido, el nombre solo debe incluir letras`);
-       
+        //mensajeUsuario(nombre,'error',`El nombre ${nombre.value} es invalido, el nombre solo debe incluir letras`);
+        agregarTexto(`El nombre ${nombre.value} es invalido, el nombre solo debe incluir letras`);
     }else{
         eliminarMensajesError();
         mensajeUsuario(nombre,'valido');
@@ -126,7 +127,7 @@ function mensajeUsuario(input, tipo = '', mensaje = '') {
     parrafo.classList.add('mensaje-error');
 
     if (tipo === 'error') {
-        input.style.border = "2px solid #ff3333";
+        input.style.borderBottom = "2px solid #ff3333";
 
        if(errores.length === 0){
             formulario.appendChild(parrafo);
@@ -135,7 +136,7 @@ function mensajeUsuario(input, tipo = '', mensaje = '') {
     }else if(tipo === 'valido'){
 
         input.removeAttribute("style");
-        input.style.border = "2px solid #22bb33";
+        input.style.borderBottom = "2px solid #22bb33";
     }
 
     if(tipo === 'enviar'){
@@ -166,6 +167,7 @@ function addEventoBoton(){
     });
 }
 
+
 function mostrarServicio(){
     const nuevoDiv = document.createElement('nuevoDiv');
     formulario.classList.remove('ocultar-formulario');
@@ -179,5 +181,10 @@ function mostrarServicio(){
         formulario.classList.add('ocultar-formulario');
         body1.classList.remove('fijar-body');
      }
+}
+
+function agregarTexto(mensaje){
+    msjError.textContent = mensaje
+    
 }
 
