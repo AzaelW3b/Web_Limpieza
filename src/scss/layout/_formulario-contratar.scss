@@ -11,6 +11,7 @@
    }
 }
 .formulario-contratar{
+    animation: slideX .3s ease;
     overflow-y: scroll;
     background-color: $blanco;
     -webkit-box-shadow: 10px 13px 19px -14px rgba(0,0,0,0.75);
@@ -89,13 +90,16 @@
         color: $azul;
         font-size: 1.8rem;
     }
-
     input,textarea{
         width: 100%;
         border: none;
         border-bottom: 1px solid $azul;
         outline: 0;
         padding: .8rem;
+        transition: all .3s ease-in-out;
+        &:focus{
+            border-bottom: 1px solid $amarillo;
+        }
     }
   
     textarea{

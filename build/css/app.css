@@ -1159,12 +1159,112 @@ a {
 }
 
 .contenedor-formulario-contacto {
-  padding: 5rem;
+  padding-top: 15rem;
+  background-image: url("/src/img/bg_limpieza.jpg");
+  background-size: cover;
+  position: relative;
+  background-position: right;
+  min-height: 98rem;
 }
 
-.contenedor-formulario-contacto h2 {
+.contenedor-formulario-contacto::before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .contenedor-formulario-contacto {
+    height: 100vh;
+    min-height: 80rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contenedor-formulario-contacto {
+    background-position: center center;
+    min-height: 80rem;
+  }
+}
+
+.info-contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(18, 35, 72, 0.8);
+}
+
+.info-contacto p {
+  font-size: 1.6rem;
+}
+
+.info-contacto h2, .info-contacto p {
+  color: #ffffff;
   text-align: center;
-  color: #122348;
+}
+
+@media (min-width: 768px) {
+  .info-contacto p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .info-contacto p {
+    font-size: 2.2rem;
+  }
+}
+
+.alinear-formulario {
+  position: relative;
+  z-index: 1;
+  height: 60rem;
+}
+
+@media (min-width: 768px) {
+  .alinear-formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .alinear-formulario .info-contacto {
+    grid-column: 2/3;
+  }
+  .alinear-formulario .formulario-contacto {
+    grid-row: 1/2;
+  }
+}
+
+.imagen-contacto {
+  background-image: url("/src/img/nosotros2.jpg");
+  height: auto;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 3rem;
+}
+
+.boton-contacto {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .boton-contacto {
+    display: unset;
+  }
 }
 
 .informacion-contacto {
@@ -1927,6 +2027,7 @@ a {
 }
 
 .formulario-contratar {
+  animation: slideX .3s ease;
   overflow-y: scroll;
   background-color: #ffffff;
   -webkit-box-shadow: 10px 13px 19px -14px rgba(0, 0, 0, 0.75);
@@ -2032,6 +2133,11 @@ a {
   border-bottom: 1px solid #122348;
   outline: 0;
   padding: .8rem;
+  transition: all .3s ease-in-out;
+}
+
+.inputs-formulario-contratar input:focus, .inputs-formulario-contratar textarea:focus {
+  border-bottom: 1px solid #EFB810;
 }
 
 .inputs-formulario-contratar textarea {

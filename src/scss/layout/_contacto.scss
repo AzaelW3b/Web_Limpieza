@@ -1,8 +1,88 @@
 
 .contenedor-formulario-contacto{
-    padding:$separacion;
-    h2{
+    padding-top: $separacion + 10;
+    background-image: url("/src/img/bg_limpieza.jpg");
+    background-size: cover;
+  
+    position: relative;
+    @include difuminado-transparente($negroTransparente);
+    background-position: right;
+    min-height: 98rem;
+    @include tablet{
+        height: 100vh;
+        min-height: 80rem;
+    }
+    @include escritorio{
+        background-position: center center;
+        min-height: 80rem;
+    }
+  
+
+   
+}
+.info-contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($azul,.8);
+    p{
+        font-size: 1.6rem;
+    }
+    h2,p{
+        color: $blanco;
         text-align: center;
-        color:$azul;
+       
+    }
+    @include tablet{
+        p{
+            font-size: 1.8rem;
+        }
+       
+    }
+    @include escritorio{
+        p{
+            font-size: 2.2rem;
+        }
     }
 }
+.alinear-formulario{
+    position: relative;
+    z-index: 1;
+    height: 60rem;
+    @include tablet{
+        @include grid(2,1fr);
+        .info-contacto{
+            grid-column: 2/3;
+        }
+        .formulario-contacto{
+            grid-row: 1/2;
+        }
+    }
+   
+}
+.imagen-contacto{
+    background-image: url("/src/img/nosotros2.jpg");
+    height: auto;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.formulario-contacto{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $blanco;
+    padding:3rem;
+}
+
+.boton-contacto{
+    margin-top: 2rem;
+    display:flex;
+    justify-content: center;
+    @include tablet{
+        display: unset;
+    }
+}
+
