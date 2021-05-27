@@ -3,6 +3,7 @@ const correo = document.querySelector('#correo');
 const telefono = document.querySelector('#telefono');
 const mensaje = document.querySelector('#mensaje');
 const formulario = document.querySelector('.formulario-contratar');
+const contenedorFormulario = document.querySelector('.contenedor-formulario');
 const boton = document.querySelector('.boton-contratar');
 const botonServicio = document.querySelectorAll('.boton-contratar-servicio button');
 const contenedorServicio = document.querySelector('.contenedor-formulario-contratar');
@@ -10,7 +11,7 @@ const expresionRegular = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|
 const nombreER = new RegExp('^[a-zA-Z Ñ-ñ]+$');
 const body1 = document.querySelector('body');
 const btnCerrar = document.querySelector('.boton-cerrar');
-const msjError = document.querySelector('.msj-error');
+const contenedorMsj = document.querySelector('.contenedor-mensajes');
 
 document.addEventListener('DOMContentLoaded', () => {
     iniciarApp();
@@ -32,18 +33,15 @@ function eventosFormulario() {
 }
 
 function validarFormulario(e) {
-   
-
+    
     if(nombre.value === ''){
         eliminarMensajesError();
-        msjError.classList.remove('ocultar-mensaje');
-        agregarTexto('Debes ingresar un nombre');
-      //  mensajeUsuario(nombre,'error','El nombre no debe ir vacio');
+        mensajeUsuario(nombre, 'error', 'El nombre no debe ir vacio');
+      
 
     }else if(!nombreER.test(nombre.value)){
         eliminarMensajesError();
-        //mensajeUsuario(nombre,'error',`El nombre ${nombre.value} es invalido, el nombre solo debe incluir letras`);
-        agregarTexto(`El nombre ${nombre.value} es invalido, el nombre solo debe incluir letras`);
+        mensajeUsuario(nombre,'error',`El nombre ${nombre.value} es invalido, el nombre solo debe incluir letras`);
     }else{
         eliminarMensajesError();
         mensajeUsuario(nombre,'valido');
@@ -51,7 +49,6 @@ function validarFormulario(e) {
 
     if (e.target.type === 'email') {
         eliminarMensajesError();
-
         if (expresionRegular.test(e.target.value)) {
             eliminarMensajesError();
             mensajeUsuario(correo, 'valido');
@@ -66,7 +63,6 @@ function validarFormulario(e) {
         eliminarMensajesError();
         if (isNaN(telefono.value) || telefono.value.length < 10) {
             eliminarMensajesError();
-            console.log('Debes ingresar solo numeros');
             mensajeUsuario(telefono, 'error', 'El numero de telefono debe incluir solo numeros e incluir minimo diez caracteres');
         } else {
             eliminarMensajesError();
@@ -113,7 +109,7 @@ function enviarEmail(e){
   mensajeUsuario(boton,'enviar','Su mensaje se a enviado con exito!');
   setTimeout(()=>{
     limpiarInputs();
-    formulario.reset();
+    contenedorFormulario.reset();
      iniciarApp();
      
   },2500);
@@ -121,16 +117,17 @@ function enviarEmail(e){
 }
 
 function mensajeUsuario(input, tipo = '', mensaje = '') {
-    const parrafo = document.createElement('p');
-    const errores = document.querySelectorAll('.mensaje-error');
-    parrafo.textContent = mensaje;
-    parrafo.classList.add('mensaje-error');
-
+    const errores = document.querySelectorAll('.msj-error');
+    const msjExito = document.createElement('p');
+    const msjError = document.createElement('p');
+    msjError.classList.add('msj-error');
+    msjError.textContent = mensaje;
+ 
     if (tipo === 'error') {
         input.style.borderBottom = "2px solid #ff3333";
 
-       if(errores.length === 0){
-            formulario.appendChild(parrafo);
+          if(errores.length === 0){
+             contenedorMsj.appendChild(msjError);
        }
 
     }else if(tipo === 'valido'){
@@ -140,18 +137,19 @@ function mensajeUsuario(input, tipo = '', mensaje = '') {
     }
 
     if(tipo === 'enviar'){
-        parrafo.classList.add('mensaje-valido');
-        formulario.appendChild(parrafo);
+        msjExito.classList.add('mensaje-valido');
+        contenedorMsj.appendChild(msjExito);
+        msjExito.textContent = mensaje;
 
         setTimeout(()=>{
-            parrafo.remove();
+            msjExito.remove();
         },2000);
     }
     
 }
 
 function eliminarMensajesError(){
-    const error = document.querySelector('p.mensaje-error');
+    const error = document.querySelector('p.msj-error');
 
     if(error){
         error.remove();
@@ -167,6 +165,9 @@ function addEventoBoton(){
     });
 }
 
+function mostrarMjsError(){
+    msjError.classList.remove('ocultar-mensaje');
+}
 
 function mostrarServicio(){
     const nuevoDiv = document.createElement('nuevoDiv');
@@ -183,8 +184,5 @@ function mostrarServicio(){
      }
 }
 
-function agregarTexto(mensaje){
-    msjError.textContent = mensaje
-    
-}
+
 
