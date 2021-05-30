@@ -1158,6 +1158,221 @@ a {
   }
 }
 
+.contenedor-cotizacion {
+  padding-top: 15rem;
+}
+
+.instrucciones-cotizacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instrucciones-cotizacion h1 {
+  color: #122348;
+}
+
+.instrucciones-cotizacion p {
+  color: #ff0f0f;
+  font-weight: 700;
+}
+
+.lista-instrucciones {
+  padding: 0;
+}
+
+.lista-instrucciones li {
+  list-style: decimal;
+  font-size: 2rem;
+}
+
+.contenido-cotizacion {
+  display: none;
+}
+
+.cotizacion-activa {
+  display: blocK !important;
+}
+
+/*Listado de servicios*/
+@media (min-width: 768px) {
+  .listado-servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .listado-servicios .ticket {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+}
+
+.servicio-cotizacion {
+  transition: all .3s ease-in-out;
+  -webkit-box-shadow: 10px 10px 14px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 14px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 14px -7px rgba(0, 0, 0, 0.75);
+  padding: 4rem;
+}
+
+.servicio-cotizacion .precio, .servicio-cotizacion .nombre-servicio, .servicio-cotizacion .detalles-cotizacion, .servicio-cotizacion .dias-servicio {
+  text-align: center;
+}
+
+.servicio-cotizacion .precio {
+  color: #122348;
+  font-weight: bold;
+}
+
+.servicio-cotizacion .precio span {
+  color: #EFB810;
+  font-weight: 700;
+}
+
+.servicio-cotizacion .nombre-servicio {
+  color: #122348;
+  font-weight: 700;
+}
+
+.servicio-cotizacion .detalles-cotizacion {
+  font-size: 1.6rem;
+  color: #7a7a7a;
+}
+
+.servicio-cotizacion .dias-servicio {
+  color: #122348;
+}
+
+.servicio-cotizacion .dias-servicio span {
+  color: #EFB810;
+  font-weight: 700;
+}
+
+.servicio-cotizacion:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.ticket {
+  margin: 0 auto;
+  padding: 3rem;
+  width: 30rem;
+  border: 1px solid #eee;
+}
+
+.encabezado-ticket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px dotted #122348;
+}
+
+.encabezado-ticket img {
+  width: 13rem;
+}
+
+.encabezado-ticket p {
+  color: #122348;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.numero-servicios {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-bottom: 1px dotted #122348;
+}
+
+.numero-servicios p {
+  margin-top: 0;
+  color: #353535;
+  font-size: 1.8rem;
+}
+
+.numero-servicios .numero-ingresados {
+  color: #000;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.servicios-ingresados {
+  padding: 1rem;
+  border-bottom: 1px dotted #122348;
+}
+
+.servicios-ingresados p {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.servicios-ingresados .servicio-seleccionado {
+  font-weight: 700;
+  color: #353535;
+}
+
+.servicios-ingresados .servicio-seleccionado span {
+  color: #EFB810;
+  font-weight: 700;
+}
+
+.total-servicios {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-bottom: 1px dotted #122348;
+}
+
+.total-servicios p {
+  margin-top: 0;
+}
+
+.total-servicios p {
+  color: #353535;
+}
+
+.total-servicios span {
+  color: #EFB810;
+  font-weight: 700;
+}
+
+.botones-cotizacion button {
+  border: none;
+  border-top: 1px solid #122348;
+  border-right: 1px solid #122348;
+  border-left: 1px solid #122348;
+  background-color: #ffffff;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #122348;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.botones-cotizacion button:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .botones-cotizacion button {
+    display: inline-block;
+  }
+}
+
+button.activo-cotizacion {
+  border-top: 1px solid #EFB810;
+  border-right: 1px solid #EFB810;
+  border-left: 1px solid #EFB810;
+  font-weight: 700;
+  color: #EFB810;
+}
+
+.servicio-click {
+  background-color: #122348;
+}
+
+.servicio-click p {
+  color: #ffffff !important;
+}
+
 .contenedor-formulario-contacto {
   padding-top: 15rem;
   background-image: url("/src/img/bg_limpieza.jpg");

@@ -39,7 +39,83 @@
             </div>
         </div>
     </div>
-   
+    <div class="contenedor-cotizacion contenedor">
+        <div class="instrucciones-cotizacion">
+            <h1>Personaliza tu cotización</h1>
+            <p>*Para obtener un servicio más personalizado, debes seguir los
+                siguientes pasos*
+            </p>
+            <ul class="lista-instrucciones">
+                <li>Seleccionar el servicio que deseas
+
+                </li>
+                <li>Llenar el formulario con tus datos de contacto y el dia
+                    en el que deseas que el servicio de limpieza sea impartido
+                </li>
+                <li>Al final se le mostrara un resumen con su total a pagar y puede descargar
+                    el ticket en un archivo pdf
+                </li>
+            </ul>
+        </div>
+
+        <div class="app-cotizacion">
+            <nav class="botones-cotizacion">
+                <button type="button" data-paso="1" class="activo-cotizacion">Selecciona tu servicio</button>
+                <button type="button" data-paso="2">Ingresa tus datos</button>
+                <button type="button" data-paso="3">Resumen</button>
+            </nav>
+            <div class="contenido-cotizacion cotizacion-activa" data-paso="1">
+                <div class="listado-servicios">
+                    <div class="servicio-cotizacion ">
+                        <p class="precio"><span>$</span> 2500</p>
+                        <p class="nombre-servicio">Limpieza Profesional</p>
+                        <p class="detalles-cotizacion">*Incluye productos de higiene y limpieza*</p>
+                        <p class="dias-servicio">por <span> 3 dias </span></p>
+                    </div>
+                    <div class="servicio-cotizacion">
+                        <p class="precio"><span>$</span> 10500</p>
+                        <p class="nombre-servicio">Limpieza Profesional</p>
+                        <p class="detalles-cotizacion">*Incluye productos de higiene y limpieza*</p>
+                        <p class="dias-servicio">por <span> 1 semana </span></p>
+                    </div>
+                    <div class="servicio-cotizacion">
+                        <p class="precio"><span>$</span> 25000</p>
+                        <p class="nombre-servicio">Limpieza Profesional</p>
+                        <p class="detalles-cotizacion">*Incluye productos de higiene y limpieza*</p>
+                        <p class="dias-servicio">por <span> 2 semanas </span></p>
+                    </div>
+                    <div class="servicio-cotizacion">
+                        <p class="precio"><span>$</span> 900</p>
+                        <p class="nombre-servicio">Limpieza Profesional</p>
+                        <p class="detalles-cotizacion">*Incluye productos de higiene y limpieza*</p>
+                        <p class="dias-servicio">por <span> 2 horas </span> </p>
+                    </div>
+                    <div class="ticket">
+                        <div class="encabezado-ticket">
+                            <img src="/src/img/logoSinFondo.png" alt="">
+                            <p>Guardianes del golfo</p>
+                        </div>
+                        <div class="numero-servicios">
+                            <p>Numero de servicios ingresados</p>
+                            <p class="numero-ingresados"></p>
+                        </div>
+                        <div class="servicios-ingresados">
+                            <p>Sus servicios seleccionados</p>
+                            <p class="servicio-seleccionado"> Limpieza profesional <span> $10500</span> </p>
+
+                        </div>
+                        <div class="total-servicios">
+                            <p>Total: <span class="suma-total"> $10500</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contenido-cotizacion" data-paso="2">
+                <h2>Hola xd</h2>
+            </div>
+        </div>
+    </div>
+
     <div class="informacion-contacto">
         <div class="alinear-iconos-contacto contenedor">
             <div class="iconos-contacto">
@@ -112,15 +188,12 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link rel="preload" as="script" href="https://unpkg.com/aos@2.3.1/dist/aos.js">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- <link rel="preload" as="script" href="build/js/app.js"> -->
-    <script src="build/js/animaciones.js"></script>
-    <script src="build/js/app-servicios.js"></script>
-    <script src="build/js/form-contactar.js"></script>
+
+
+
     <script src="build/js/fecha.js"></script>
     <script src="build/js/menu.js"></script>
+    <script src="build/js/cotizacion.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,206 @@
+.contenedor-cotizacion{
+    padding-top: $separacion + 10;
+}
+.instrucciones-cotizacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        color: $azul;
+    }
+    p{
+        color:#ff0f0f;
+        font-weight: $bold;
+    }
+}
+.lista-instrucciones{
+        padding: 0;
+    li{
+        list-style:decimal;
+        font-size: 2rem;
+    }
+}
+
+.contenido-cotizacion{
+    display: none;
+   
+    
+}
+
+.cotizacion-activa{
+    display:blocK !important; 
+}
+
+
+/*Listado de servicios*/
+.listado-servicios{
+    @include tablet{
+        @include grid(3,1fr);
+        gap: 2rem;
+
+        .ticket{
+            grid-column: 3/4;
+            grid-row: 1/3;
+        }
+    }
+    
+}
+
+.servicio-cotizacion{
+transition: all .3s ease-in-out;
+-webkit-box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
+  
+    padding: 4rem;
+
+    .precio, .nombre-servicio, .detalles-cotizacion, .dias-servicio{
+        text-align: center;
+    }
+    
+    .precio{
+        color: $azul;
+        font-weight: bold;
+        span{
+            color: $amarillo;
+            font-weight: $bold;
+        }
+    }
+
+    .nombre-servicio{
+        color:$azul;
+        font-weight: $bold;
+    }
+
+    .detalles-cotizacion{
+        font-size: 1.6rem;
+        color: rgb(122, 122, 122);
+    }
+
+    .dias-servicio{
+        color: $azul;
+
+        span{
+            color: $amarillo;
+            font-weight: $bold;
+        }
+    }
+    &:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+.ticket{
+    margin: 0 auto;
+    padding: 3rem;
+    width:30rem;
+    border: 1px solid #eee;
+  
+    
+}
+.encabezado-ticket{
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   img{
+       width:13rem;
+   }
+
+   p{
+       color: $azul;
+       text-transform: capitalize;
+       font-weight: $bold;
+   }
+   border-bottom: 1px dotted $azul;
+}
+.numero-servicios{
+   background-color:#f4f4f4;
+   padding: 1rem;
+    p{
+       
+        margin-top: 0;
+        color: #353535;
+        font-size: 1.8rem;
+    }
+    .numero-ingresados{
+        color:#000;
+        margin-bottom: 0;
+        font-weight: $bold;
+    }
+    border-bottom: 1px dotted $azul;
+}
+.servicios-ingresados{
+    padding:  1rem;
+    p{
+        margin-top: 0;
+        font-size: 1.8rem;
+    }
+    border-bottom: 1px dotted $azul;
+    .servicio-seleccionado{
+        font-weight: $bold;
+        color: #353535;
+  
+        span{
+            color:$amarillo;
+            font-weight: $bold;
+        }
+        
+    }
+}
+.total-servicios{
+    background-color:#f4f4f4;
+    padding:1rem;
+    p{
+        margin-top: 0;
+    }
+    border-bottom: 1px dotted $azul;
+    p{
+        color: #353535;
+    }
+    span{
+        color: $amarillo;
+        font-weight:$bold;
+    }
+}
+
+.botones-cotizacion{
+    button{
+        
+        border: none;
+        border-top: 1px solid $azul;
+        border-right: 1px solid $azul;
+        border-left: 1px solid $azul;
+        background-color: $blanco;
+        padding: 1rem;
+        font-size: 2rem;
+        color:$azul;
+        margin-bottom: 1rem;
+        &:hover{
+            cursor: pointer;
+        }
+        display:block;
+
+        @include tablet{
+            display:inline-block;
+        }
+    }
+}
+
+button.activo-cotizacion{
+        border-top: 1px solid $amarillo;
+        border-right: 1px solid $amarillo;
+        border-left: 1px solid $amarillo;
+        font-weight: $bold;
+        color:$amarillo;
+}
+
+
+.servicio-click{
+    background-color:$azul;
+   
+    p{
+        color: $blanco !important;
+    }
+}
