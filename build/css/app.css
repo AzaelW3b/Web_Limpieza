@@ -1308,6 +1308,7 @@ a {
 .servicios-ingresados .servicio-seleccionado {
   font-weight: 700;
   color: #353535;
+  width: 90%;
 }
 
 .servicios-ingresados .servicio-seleccionado span {
