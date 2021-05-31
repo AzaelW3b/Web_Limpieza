@@ -2,6 +2,7 @@ const botonesMenu = document.querySelectorAll('.botones-cotizacion button');
 const contenidoCotizacion = document.querySelectorAll('.contenido-cotizacion');
 const listaServicios = document.querySelector('.listado-servicios');
 const serviciosIngresados = document.querySelector('.servicios-ingresados');
+const totalContenedor = document.querySelector('.total-servicios');
 let servicioActivo = null;
 const cotizacion ={
     nombre:'',
@@ -112,33 +113,26 @@ function seleccionarServicio(servicio) {
                         precio: servicioSeleccionado.firstElementChild.textContent,
                         nombre: servicioSeleccionado.firstElementChild.nextElementSibling.textContent
                     }
+              
                     agregarServicioTicket(servicioObj);
+                    sumarPrecios();
+                    serviciosAcumulados();
                 }else{
                     const id = parseInt(servicioSeleccionado.dataset.idServicio);
                     eliminarServicio(id);
                     contadorServicios--;
+                    restarPrecios();
                     numeroServicios.textContent = contadorServicios;
+
+                   if(contadorServicios === 0){
+                    while(totalContenedor.firstElementChild.nextElementSibling){
+                        totalContenedor.removeChild(totalContenedor.firstElementChild.nextElementSibling);
+                    }
+                   }
+                   
                 }
         });
     });
-     
-        // if (servicio.classList.contains('servicio-click')) {
-        //     contadorServicios++;
-
-        //     if (contadorServicios >= 2 || contadorServicios === 0) {
-        //         numeroServicios.innerHTML = `${contadorServicios} servicios`;
-        //     } else {
-        //         numeroServicios.innerHTML = `${contadorServicios} servicio`;
-        //     }
-
-        // } else {
-        //     contadorServicios--;
-        //     if (contadorServicios >= 2 || contadorServicios === 0) {
-        //         numeroServicios.innerHTML = `${contadorServicios} servicios`;
-        //     } else {
-        //         numeroServicios.innerHTML = `${contadorServicios} servicio`;
-        //     }
-        // }
    
 }
 
@@ -174,8 +168,63 @@ function eliminarServicio(id){
         parrafoEliminado.classList.add('servicio-seleccionado');
         parrafoEliminado.innerHTML = `${nombre} <span>${precio}</span>`;
         serviciosIngresados.appendChild(parrafoEliminado);
-        console.log(parrafoEliminado);
+        
        
 
     });
+}
+
+function sumarPrecios(){
+    const {servicios} = cotizacion;
+    
+    let suma = 0;
+    servicios.forEach(servicio =>{
+    
+  
+    const totalTexto = document.createElement('p');
+    const totalSpan = document.createElement('span');
+
+    while(totalContenedor.firstElementChild){
+        totalContenedor.removeChild(totalContenedor.firstElementChild);
+    }
+       totalTexto.textContent = 'Total:';
+       const precioActual = servicio.precio.split("$");
+       suma+=parseInt(precioActual[1].trim());
+       totalSpan.classList.add('suma-total');
+       totalSpan.innerHTML = `$${suma}`;
+       totalContenedor.appendChild(totalTexto);
+       totalContenedor.appendChild(totalSpan);
+       
+    });
+}
+
+function restarPrecios(){
+    const {servicios} = cotizacion;
+   
+   
+    let resta = 0;
+    servicios.forEach(servicio =>{
+    
+    const totalContenedor = document.querySelector('.total-servicios');
+    const totalTexto = document.createElement('p');
+    const totalSpan = document.createElement('span');
+    while(totalContenedor.firstElementChild){
+        totalContenedor.removeChild(totalContenedor.firstElementChild);
+    }
+      
+       totalTexto.textContent = 'Total:';
+       const precioActual = servicio.precio.split("$");
+       resta -= parseInt(precioActual[1].trim());
+       totalSpan.classList.add('suma-total');
+       totalSpan.innerHTML = `$${Math.abs(resta)}`;
+       totalContenedor.appendChild(totalTexto);
+       totalContenedor.appendChild(totalSpan);
+       
+       
+    });   
+   
+}
+
+function serviciosAcumulados(){
+    console.log(cotizacion.servicios);
 }
