@@ -1334,6 +1334,20 @@ a {
   font-weight: 700;
 }
 
+.botones-cotizacion {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .botones-cotizacion {
+    flex-direction: row;
+  }
+  .botones-cotizacion button {
+    flex: 1;
+  }
+}
+
 .botones-cotizacion button {
   border: none;
   border-top: 1px solid #122348;
@@ -1358,11 +1372,10 @@ a {
 }
 
 button.activo-cotizacion {
-  border-top: 1px solid #EFB810;
-  border-right: 1px solid #EFB810;
-  border-left: 1px solid #EFB810;
+  background-color: #EFB810;
+  border: none;
   font-weight: 700;
-  color: #EFB810;
+  color: #ffffff;
 }
 
 .servicio-click {
@@ -1371,6 +1384,12 @@ button.activo-cotizacion {
 
 .servicio-click p {
   color: #ffffff !important;
+}
+
+.no-disponible {
+  font-size: 5rem;
+  text-align: center;
+  grid-column: 1/3;
 }
 
 .contenedor-formulario-contacto {

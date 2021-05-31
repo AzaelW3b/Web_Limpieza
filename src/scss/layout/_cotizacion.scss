@@ -166,8 +166,16 @@ box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
 }
 
 .botones-cotizacion{
+    display:flex;
+    flex-direction: column;
+    @include tablet{
+        flex-direction: row;
+        button{
+            flex: 1;
+        }
+    }
     button{
-        
+       
         border: none;
         border-top: 1px solid $azul;
         border-right: 1px solid $azul;
@@ -189,11 +197,10 @@ box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
 }
 
 button.activo-cotizacion{
-        border-top: 1px solid $amarillo;
-        border-right: 1px solid $amarillo;
-        border-left: 1px solid $amarillo;
+        background-color:$amarillo;
+        border: none;
         font-weight: $bold;
-        color:$amarillo;
+        color:$blanco;
 }
 
 
@@ -203,4 +210,9 @@ button.activo-cotizacion{
     p{
         color: $blanco !important;
     }
+}
+.no-disponible{
+    font-size: 5rem;
+    text-align: center;
+    grid-column: 1/3;
 }
