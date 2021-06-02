@@ -1421,14 +1421,69 @@ button.activo-cotizacion {
   font-weight: 700;
 }
 
-.inputs-cotizacion input {
+.inputs-cotizacion input, .inputs-cotizacion textarea {
+  border: 1px solid #122348;
   width: 100%;
   padding: .5rem;
+  transition: all .3s ease-in-out;
+}
+
+.inputs-cotizacion input:focus, .inputs-cotizacion textarea:focus {
+  border: 1px solid #EFB810;
+}
+
+.inputs-cotizacion textarea {
+  height: 15rem;
+  resize: none;
 }
 
 .inputs-cotizacion button {
   margin-top: 1rem;
   border: none;
+}
+
+/*Resumen*/
+.resumen-cita h2, .resumen-servicio h2 {
+  color: #122348;
+}
+
+.resumen-cita p {
+  color: #122348;
+}
+
+.resumen-cita span {
+  color: #EFB810;
+  font-weight: 700;
+}
+
+.servicio-cliente p {
+  color: #122348;
+}
+
+.servicio-cliente span {
+  font-weight: 700;
+  color: #EFB810;
+}
+
+.imprimir-ticket input {
+  border: none;
+}
+
+.total-pagar span {
+  color: #EFB810;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .resumen-pagar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.logo-ticket {
+  display: flex;
+  align-items: center;
 }
 
 .contenedor-formulario-contacto {

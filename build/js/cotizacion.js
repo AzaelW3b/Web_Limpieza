@@ -225,6 +225,8 @@ function restarPrecios(){
    
 }
 
-function serviciosAcumulados(){
-    console.log(cotizacion.servicios);
+//Validacion formulario
+function validacionFormulario(){
+    const nombre = document
+
 }

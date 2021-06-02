@@ -242,9 +242,19 @@ button.activo-cotizacion{
         font-size: 1.8rem;
         font-weight: $bold;
     }
-    input{
+    input, textarea{
+        border: 1px solid $azul;
         width:100%;
         padding: .5rem;
+        transition: all .3s ease-in-out;
+        &:focus{
+
+            border: 1px solid $amarillo;
+        }
+    }
+    textarea{
+        height:15rem;
+        resize:none;
     }
 }
 .inputs-cotizacion{
@@ -252,4 +262,53 @@ button.activo-cotizacion{
         margin-top: 1rem;
         border: none;
     }
+}
+
+/*Resumen*/
+.resumen-cita, .resumen-servicio{
+    h2{
+        color: $azul;
+    }
+}
+.resumen-cita{
+    p{
+        color: $azul;
+    }
+    span{
+        color:$amarillo;
+        font-weight: $bold;
+    }
+}
+
+.servicio-cliente{
+    p{
+        color: $azul;
+        
+    }
+    span{
+        font-weight: $bold;
+        color:$amarillo;
+    }
+}
+.imprimir-ticket{
+    input{
+        border: none;
+    }
+}
+
+.total-pagar{
+    span{
+        color: $amarillo;
+        font-weight: $bold;
+    }
+}
+.resumen-pagar{
+    @include tablet{
+        @include grid(2,1fr);
+    }
+}
+
+.logo-ticket{
+    display: flex;
+    align-items: center;
 }
