@@ -13,18 +13,13 @@ const body1 = document.querySelector('body');
 const btnCerrar = document.querySelector('.boton-cerrar');
 const contenedorMsj = document.querySelector('.contenedor-mensajes');
 
-document.addEventListener('DOMContentLoaded', () => {
-    iniciarApp();
-    eventosFormulario();
-    addEventoBoton();
-});
 
-function iniciarApp() {
+export function iniciarApp() {
     boton.disabled = true;
     boton.classList.add('boton-deshabilitado');
 }
 
-function eventosFormulario() {
+export function eventosFormulario() {
     nombre.addEventListener('blur', validarFormulario);
     correo.addEventListener('blur', validarFormulario);
     telefono.addEventListener('blur', validarFormulario);
@@ -157,7 +152,7 @@ function eliminarMensajesError(){
 }
 
 
-function addEventoBoton(){
+export function addEventoBoton(){
     botonServicio.forEach(btnServicio =>{
         btnServicio.addEventListener('click', ()=>{
             mostrarServicio();

@@ -1,5 +1,5 @@
 .vista-servicios{
-    @include banner-bg-imagen( url(/src/img/nosotros1.jpg));
+    @include banner-bg-imagen( url(/build/img/nosotros1.jpg));
     background-position: top;
     @include difuminado-transparente($negroTransparente);
   

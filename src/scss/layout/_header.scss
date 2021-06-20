@@ -1,15 +1,15 @@
 .cabezera{
-    background: url(/src/img/bg_limpieza.jpg) no-repeat center right fixed;
+    background: url(/build/img/bg_limpieza.jpg) no-repeat center right;
     background-size: cover;
-    @include escritorio{
-        background-image: url(/src/img/bg_limpieza.jpg);
-        background-position: top center;
-     
-    }
     height: 100vh;
     min-height:80rem;
     position: relative;
     z-index: 1;
+    @include tablet{
+        background: url(/build/img/bg_limpieza.jpg) no-repeat top right fixed;
+        background-size: cover;
+    }
+   
 
    @include difuminado-transparente($negroTransparente);
 }

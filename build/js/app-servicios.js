@@ -1,8 +1,13 @@
+import {iniciarApp, eventosFormulario,addEventoBoton} from './form-contactar.js';
+
 const servicios = document.querySelectorAll('.menu-servicio');
 let servicioActivo = null;
 const descripcionServicios = document.querySelectorAll('.descripcion-servicio');
 document.addEventListener('DOMContentLoaded',()=>{
     agregarAtributoServicios();
+    iniciarApp();
+    eventosFormulario();
+    addEventoBoton();
 });
 
 function agregarAtributoServicios(){

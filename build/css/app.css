@@ -674,7 +674,7 @@ a {
 }
 
 .cabezera {
-  background: url(/src/img/bg_limpieza.jpg) no-repeat center right fixed;
+  background: url(/build/img/bg_limpieza.jpg) no-repeat center right;
   background-size: cover;
   height: 100vh;
   min-height: 80rem;
@@ -682,10 +682,10 @@ a {
   z-index: 1;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .cabezera {
-    background-image: url(/src/img/bg_limpieza.jpg);
-    background-position: top center;
+    background: url(/build/img/bg_limpieza.jpg) no-repeat top right fixed;
+    background-size: cover;
   }
 }
 
@@ -781,7 +781,7 @@ a {
 }
 
 .texto-beneficios {
-  background: url(/src/img/trabajaNosotros.jpg) no-repeat center center;
+  background: url(/build/img/trabajaNosotros.jpg) no-repeat center center;
   height: 800px;
   background-size: cover;
   position: relative;
@@ -894,15 +894,6 @@ a {
 .contenedor-informacion-nosotros {
   overflow: hidden;
   padding-top: 5rem;
-}
-
-@media (min-width: 768px) {
-  .contenedor-informacion-nosotros {
-    background-image: url(/src/img/burbujas.png);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-  }
 }
 
 @media (min-width: 768px) {
@@ -1354,9 +1345,6 @@ a {
 
 .botones-cotizacion button {
   border: none;
-  border-top: 1px solid #122348;
-  border-right: 1px solid #122348;
-  border-left: 1px solid #122348;
   background-color: #ffffff;
   padding: 1rem;
   font-size: 2rem;
@@ -1376,10 +1364,9 @@ a {
 }
 
 button.activo-cotizacion {
-  background-color: #EFB810;
-  border: none;
+  border-bottom: 3px solid #EFB810;
+  color: #EFB810;
   font-weight: 700;
-  color: #ffffff;
 }
 
 .servicio-click {
@@ -1432,11 +1419,6 @@ button.activo-cotizacion {
   border: 1px solid #EFB810;
 }
 
-.inputs-cotizacion textarea {
-  height: 15rem;
-  resize: none;
-}
-
 .inputs-cotizacion button {
   margin-top: 1rem;
   border: none;
@@ -1486,9 +1468,23 @@ button.activo-cotizacion {
   align-items: center;
 }
 
+.swal2-confirm {
+  background-color: #122348 !important;
+  font-size: 1.5rem !important;
+  font-weight: 700;
+}
+
+.swal2-confirm:focus {
+  box-shadow: unset !important;
+}
+
+.swal2-html-container {
+  font-size: 1.8rem !important;
+}
+
 .contenedor-formulario-contacto {
   padding-top: 15rem;
-  background-image: url("/src/img/bg_limpieza.jpg");
+  background-image: url("/build/img/bg_limpieza.jpg");
   background-size: cover;
   position: relative;
   background-position: right;
@@ -1568,7 +1564,7 @@ button.activo-cotizacion {
 }
 
 .imagen-contacto {
-  background-image: url("/src/img/nosotros2.jpg");
+  background-image: url("/build/img/nosotros2.jpg");
   height: auto;
   background-position: right;
   background-repeat: no-repeat;
@@ -1740,7 +1736,7 @@ button.activo-cotizacion {
 
 .banner-nosotros {
   padding-top: 5rem;
-  background: url(/src/img/nosotros.jpg) no-repeat fixed center center;
+  background: url(/build/img/nosotros.jpg) no-repeat fixed center center;
   height: 65rem;
   background-size: cover;
   position: relative;
@@ -2077,7 +2073,7 @@ button.activo-cotizacion {
 
 .vista-servicios {
   padding-top: 5rem;
-  background: url(/src/img/nosotros1.jpg) no-repeat fixed center center;
+  background: url(/build/img/nosotros1.jpg) no-repeat fixed center center;
   height: 65rem;
   background-size: cover;
   position: relative;
@@ -2376,7 +2372,7 @@ button.activo-cotizacion {
 }
 
 .bg-formulario {
-  background-image: url("/src/img/bg_limpieza.jpg");
+  background-image: url("/build/img/bg_limpieza.jpg");
   background-position: right;
   background-size: cover;
   height: 15rem;

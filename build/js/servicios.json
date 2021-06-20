@@ -1,0 +1,29 @@
+{
+    "servicios":[
+        {
+            "id":1,
+            "precio": 2500,
+            "nombre": "Limpieza Profesional",
+            "dias": "3 dias"
+        },
+        {
+            "id":2,
+            "precio": 10500,
+            "nombre": "Limpieza Profesional",
+            "dias": "3 dias"
+        },
+        {
+            "id":3,
+            "precio": 25000,
+            "nombre": "Limpieza Profesional",
+            "dias": "2 semanas"
+        },
+        {
+            "id":4,
+            "precio": 900,
+            "nombre": "Limpieza Profesional",
+            "dias": "por 2 horas"
+        }
+        
+    ]
+}

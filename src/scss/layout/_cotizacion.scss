@@ -180,9 +180,7 @@ box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
     button{
        
         border: none;
-        border-top: 1px solid $azul;
-        border-right: 1px solid $azul;
-        border-left: 1px solid $azul;
+       
         background-color: $blanco;
         padding: 1rem;
         font-size: 2rem;
@@ -200,10 +198,9 @@ box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
 }
 
 button.activo-cotizacion{
-        background-color:$amarillo;
-        border: none;
-        font-weight: $bold;
-        color:$blanco;
+    border-bottom: 3px solid $amarillo;
+    color: $amarillo;
+    font-weight: $bold;
 }
 
 
@@ -252,10 +249,7 @@ button.activo-cotizacion{
             border: 1px solid $amarillo;
         }
     }
-    textarea{
-        height:15rem;
-        resize:none;
-    }
+   
 }
 .inputs-cotizacion{
     button{
@@ -311,4 +305,16 @@ button.activo-cotizacion{
 .logo-ticket{
     display: flex;
     align-items: center;
+}
+
+.swal2-confirm {
+    background-color: $azul !important;
+    font-size: 1.5rem !important;
+    font-weight: $bold;
+    &:focus{
+        box-shadow: unset!important;
+    }
+}
+.swal2-html-container{
+    font-size: 1.8rem !important;
 }

@@ -8,8 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guardianes Del Golfo | Seguridad Privada</title>
     <link rel="shortcut icon" href="build/img/logoSinFondo.png" type="image/x-icon">
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/753766ce2c.js" crossorigin="anonymous"></script>
     <link rel="preload" href="build/css/app.css" as="style">
     <link rel="stylesheet" href="build/css/app.css">
@@ -69,7 +67,7 @@
 
                     <div class="ticket">
                         <div class="encabezado-ticket">
-                            <img src="/src/img/logoSinFondo.png" alt="">
+                            <img src="/build/img/logoSinFondo.png" alt="">
                             <p>Guardianes del golfo</p>
                         </div>
                         <div class="numero-servicios">
@@ -90,27 +88,29 @@
                 <form action="" class="datos-cotizacion contenedor">
                     <div class="inputs-cotizacion">
                         <label for="">Nombre</label>
-                        <input type="text">
+                        <input type="text" id="nombre-cotizacion">
                     </div>
                     <div class="inputs-cotizacion">
                         <label for="">Telefono</label>
-                        <input type="tel">
+                        <input type="tel" id="telefono-cotizacion">
                     </div>
                     <div class="inputs-cotizacion">
                         <label for="">Correo</label>
-                        <input type="email">
+                        <input type="email" id="correo-cotizacion">
                     </div>
                     <div class="inputs-cotizacion">
                         <label for="">Fecha</label>
-                        <input type="date">
+                        <input type="date" id="fecha-cotizacion">
                     </div>
                     <div class="inputs-cotizacion">
                         <label for="">Hora</label>
-                        <input type="time">
+                        <input type="time" id="hora-cotizacion">
                     </div>
                     <div class="inputs-cotizacion">
                         <label for="">Servicio seleccionado</label>
-                        <textarea></textarea>
+                        <div class="servicios-cliente">
+
+                        </div>
                     </div>
                     <div class="inputs-cotizacion">
                         <button type="submit" class="boton-primario amarillo">Enviar Cotizacion</button>
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     <div class="logo-ticket">
-                        <img src="/src/img/logoSinFondo.png" alt="">
+                        <img src="/build/img/logoSinFondo.png" alt="">
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
     <footer class="footer">
         <div class="contenedor-footer contenedor">
             <div class="logo-footer alinear-logo">
-                <img src="src/img/logoSinFondo.png" alt="">
+                <img src="build/img/logoSinFondo.png" alt="">
                 <p>Somos tan grandes como grande es nuestra gente</p>
             </div>
             <div class="enlaces-footer ultimo-enlaces">
@@ -230,9 +230,11 @@
 
 
 
-
-    <script src="build/js/fecha.js"></script>
-    <script src="build/js/menu.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="preload" as="script" href="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="build/js/app.js" type="module"></script>
     <script src="build/js/cotizacion.js"></script>
 </body>
 

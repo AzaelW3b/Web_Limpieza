@@ -1,13 +1,4 @@
 .contenedor-informacion-nosotros{
-  
-  @include tablet{
-    background-image: url(/src/img/burbujas.png);
-    background-size: cover;
-    background-position:top;
-    background-repeat: no-repeat;
-  
-  }
-
   overflow: hidden;
   padding-top: 5rem;
  @include tablet{

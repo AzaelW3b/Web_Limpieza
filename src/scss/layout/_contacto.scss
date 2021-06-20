@@ -1,7 +1,7 @@
 
 .contenedor-formulario-contacto{
     padding-top: $separacion + 10;
-    background-image: url("/src/img/bg_limpieza.jpg");
+    background-image: url("/build/img/bg_limpieza.jpg");
     background-size: cover;
   
     position: relative;
@@ -62,7 +62,7 @@
    
 }
 .imagen-contacto{
-    background-image: url("/src/img/nosotros2.jpg");
+    background-image: url("/build/img/nosotros2.jpg");
     height: auto;
     background-position: right;
     background-repeat: no-repeat;

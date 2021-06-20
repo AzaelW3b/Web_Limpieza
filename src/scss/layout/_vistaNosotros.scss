@@ -1,5 +1,5 @@
 .banner-nosotros{
-    @include banner-bg-imagen( url(/src/img/nosotros.jpg));
+    @include banner-bg-imagen( url(/build/img/nosotros.jpg));
     background-position: right;
     @include difuminado-transparente($negroTransparente);
     padding-top: 10rem;

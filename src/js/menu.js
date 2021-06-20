@@ -1,11 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-
-    menuHamburguesa();
-	
-
-});
-
-function menuHamburguesa(){
+ export function menuHamburguesa(){
 	const nav = document.querySelector('#hamburguesa button');
 	const navegacionNormal = document.querySelector('.navegacion');
 	const enlaces = document.querySelectorAll('.navegacion a');
