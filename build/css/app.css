@@ -451,6 +451,7 @@ a {
   padding: 1rem 4rem;
   display: inline-block;
   transition: background-color .3s ease;
+  animation: mover .8s ease infinite;
 }
 
 .amarillo {
@@ -2335,6 +2336,27 @@ button.activo-cotizacion {
   }
   .descripcion-imagen-servicio img {
     height: 55rem;
+  }
+}
+
+.parrafo-ventaja span {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@keyframes mover {
+  50% {
+    transform: scale(1.1);
+    transition: all .3s ease;
+  }
+  70% {
+    transition: all .3s ease;
+  }
+  75% {
+    transition: all .3s ease;
+  }
+  100% {
+    transition: all .3s ease;
   }
 }
 

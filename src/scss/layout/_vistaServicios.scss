@@ -202,3 +202,29 @@
         }
     }
 }
+
+.parrafo-ventaja{
+    span{
+        font-weight: $bold;
+        text-transform: uppercase;
+    }
+}
+
+
+@keyframes mover {
+    50%{
+        transform: scale(1.1);
+        transition: all .3s ease;
+    } 
+    70%{
+        transition: all .3s ease;
+    }
+
+    75%{
+        transition: all .3s ease;
+    }
+    100%{
+        //transform: scale(1.1);
+        transition: all .3s ease;
+    }
+}
