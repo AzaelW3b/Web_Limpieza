@@ -1099,6 +1099,7 @@ a {
 
 .imagen-beneficio img {
   width: 10rem;
+  height: 10rem;
 }
 
 .texto-servicio {
@@ -1728,6 +1729,7 @@ button.activo-cotizacion {
   padding-bottom: 2rem;
   margin-bottom: 0;
   text-align: center;
+  font-size: 1.7rem;
 }
 
 .autor {
