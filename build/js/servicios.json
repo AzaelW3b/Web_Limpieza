@@ -17,12 +17,6 @@
             "precio": 25000,
             "nombre": "Limpieza Profesional",
             "dias": "2 semanas"
-        },
-        {
-            "id":4,
-            "precio": 900,
-            "nombre": "Limpieza Profesional",
-            "dias": "por 2 horas"
         }
         
     ]

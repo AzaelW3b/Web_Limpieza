@@ -71,7 +71,7 @@ async function mostrarServicio() {
         const datos = await resultado.json();
         const { servicios } = datos;
 
-        servicios.forEach(servicio => {
+        servicios.forEach((servicio, i) => {
             const { id, precio, nombre, dias } = servicio;
             const precioServicio = document.createElement('p');
             precioServicio.classList.add('precio');
@@ -91,7 +91,8 @@ async function mostrarServicio() {
 
             const divServicios = document.createElement('div');
             divServicios.classList.add('servicio-cotizacion');
-            divServicios.dataset.idServicio = id;
+            divServicios.dataset.id= 
+            divServicios.dataset.idServicio = i;
             listaServicios.appendChild(divServicios);
             divServicios.appendChild(precioServicio);
             divServicios.appendChild(nombreServicio);
