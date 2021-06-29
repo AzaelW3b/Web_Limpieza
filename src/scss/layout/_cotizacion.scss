@@ -22,13 +22,11 @@
 }
 
 .contenido-cotizacion{
-    display: none;
-   
-    
+    display: none;    
 }
 
 .cotizacion-activa{
-    display:blocK !important; 
+    display:block !important; 
 }
 
 
@@ -187,6 +185,27 @@ box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
             font-weight: $bold;
         }
         
+    }
+}
+/*separador de precios*/
+.separado-precios{
+    display: flex;
+}
+.btn-borrar{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 2.2rem;
+    background:$azul;
+    color:$blanco;
+    font-weight: $bold;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    user-select: none;
+
+    &:hover{
+        cursor: pointer;
     }
 }
 .total-servicios{
@@ -362,15 +381,54 @@ button.activo-cotizacion{
 /*Botones*/
 .contenedor-controles{
     display: flex;
-    justify-content:flex-end;
+    justify-content:center;
     .controles{
-        margin-right: 2rem;
-        margin-top: 2rem;
         padding: 1rem 1.2rem;
-        border:none;
+        border: none;
+        margin-right: 1.2rem;
+        margin-top: 2rem;
 
         &:hover{
             cursor:pointer;
         }
+    }
+
+    @include tablet{
+        .controles{
+            margin-right: 1.5rem;
+          
+        }
+        justify-content:flex-end;
+        
+    }
+  
+   
+}
+
+/*animaciones boomers*/
+.escoba{
+    width:8rem;
+    animation: izquierda-derecha 1.2s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes izquierda-derecha {
+    25%{
+        transform: rotate(-45deg);
+        transition:all .3s ease-in-out;
+    }
+    50%{
+       
+        transform:rotate(45deg);
+        transition:all .3s ease-in-out;
+    }
+
+    75%{
+        transform:rotate(-45deg);
+        transition:all .3s ease-in-out;
+    }
+    100%{
+        transform: rotate(45deg);
+        transition:all .3s ease-in-out;
     }
 }

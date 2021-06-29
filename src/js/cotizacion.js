@@ -89,6 +89,12 @@ async function mostrarServicio() {
             diasServicio.classList.add('dias-servicio');
             diasServicio.innerHTML = `por <span>${dias} </span>`;
 
+            const imagenServicio = document.createElement('img');
+            imagenServicio.src = 'src/img/escoba.png';
+            imagenServicio.classList.add('escoba');
+
+            console.log(imagenServicio);
+
             const divServicios = document.createElement('div');
             divServicios.classList.add('servicio-cotizacion');
             divServicios.dataset.id= 
@@ -98,6 +104,7 @@ async function mostrarServicio() {
             divServicios.appendChild(nombreServicio);
             divServicios.appendChild(detallesServicio);
             divServicios.appendChild(diasServicio);
+            divServicios.appendChild(imagenServicio);
 
         });
         //seleccionamos todos los servicios creados con js con la clase .servicio-cotizacion
@@ -117,15 +124,18 @@ async function mostrarServicio() {
 }
 
 function seleccionarServicio(servicio) {
-
+    // const mostrarAnimacion = document.querySelector('.escoba'); 
     const numeroServicios = document.querySelector('.numero-ingresados');
 
     servicio.forEach(servicioSeleccionado => {
-        servicioSeleccionado.addEventListener('click', () => {
-
+        servicioSeleccionado.addEventListener('click', () => {   
 
             servicioSeleccionado.classList.toggle('servicio-click');
             if (servicioSeleccionado.classList.contains('servicio-click')) {
+                // mostrarAnimacion.style.display = 'block';
+                // setTimeout(() =>{
+                //     mostrarAnimacion.style.display = 'none'
+                // },2000);
                 contadorServicios++;
                 numeroServicios.textContent = contadorServicios;
                 const servicioObj = {
@@ -140,6 +150,7 @@ function seleccionarServicio(servicio) {
 
 
             } else {
+                // mostrarAnimacion.style.display = 'none';
                 const id = parseInt(servicioSeleccionado.dataset.idServicio);
                 eliminarServicio(id);
                 contadorServicios--;
@@ -161,7 +172,7 @@ function seleccionarServicio(servicio) {
 }
 
 function agregarServicioTicket(servicioObj) {
-    const { servicios } = cotizacion;
+    const { servicios} = cotizacion;
     cotizacion.servicios = [...servicios, servicioObj];
      //limpiamos el html previo del contenedor del formulario
      while (servicioCliente.firstElementChild) {
@@ -171,21 +182,53 @@ function agregarServicioTicket(servicioObj) {
     while (serviciosIngresados.firstElementChild.nextElementSibling) {
         serviciosIngresados.removeChild(serviciosIngresados.firstElementChild.nextElementSibling);
     }
+
    
     cotizacion.servicios.forEach(servicio => {
         const { nombre, precio } = servicio;
         const pServicioIngresado = document.createElement('p');
+        const btnBorrar = document.createElement('p');
+        const divSeparador = document.createElement('div');
+        divSeparador.classList.add('separado-precios');
+        btnBorrar.classList.add('btn-borrar');
+        btnBorrar.textContent ='x';
         pServicioIngresado.classList.add('servicio-seleccionado');
-        pServicioIngresado.innerHTML = `${nombre} <span>${precio}</span> <br>`;
-        serviciosIngresados.appendChild(pServicioIngresado);
-         //agregamos los servicios que ingreso el usuario al div del formulario
-      // servicioCliente.appendChild(pServicioIngresado);
+        pServicioIngresado.innerHTML = `${nombre} <span>${precio}</span>`;
+        divSeparador.appendChild(pServicioIngresado);
+        divSeparador.appendChild(btnBorrar);
+        serviciosIngresados.appendChild(divSeparador);
+        borrarBotones(servicio.id,btnBorrar,divSeparador);
+        // const id = parseInt(servicio.dataset.idServicio);
+       
     });
    
+    
+
+}
+function borrarBotones(id,btnBorrar,div){
+    const {servicios} = cotizacion;
+    btnBorrar.addEventListener('click',()=>{
+       const eliminado =  servicios.filter(servicio => servicio.id !== id);
+       while (div.firstElementChild.nextElementSibling) {
+        div.removeChild(div.firstElementChild.nextElementSibling);
+    }
+    
+       eliminado.forEach(serviciosRestantes =>{
+            const {nombre, precio} = serviciosRestantes;
+            const serviciosSobrantes = document.createElement('p');
+            serviciosSobrantes.classList.add('servicio-seleccionado');
+            serviciosSobrantes.innerHTML = `${nombre} <span>${precio}</span>`;
+            div.appendChild(serviciosSobrantes);
+            div.appendChild(btnBorrar);
+            
+
+       });
+    })
 
 }
 
 function eliminarServicio(id) {
+
     const { servicios } = cotizacion;
 
     cotizacion.servicios = servicios.filter(servicio => servicio.id !== id);
@@ -198,9 +241,6 @@ function eliminarServicio(id) {
         parrafoEliminado.classList.add('servicio-seleccionado');
         parrafoEliminado.innerHTML = `${nombre} <span>${precio}</span>`;
         serviciosIngresados.appendChild(parrafoEliminado);
-
-
-
     });
 }
 
