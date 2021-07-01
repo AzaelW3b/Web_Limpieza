@@ -1,12 +1,11 @@
 const express = require ('express');
 const nodemailer = require ('nodemailer');
-
-const PORT = 3000;
+const path = require('path');
 const app = express();
-
-app.post('/mail',(req,rest)=>{
-
+//metodo para entender los datos del formulario
+app.use(express.urlencoded({extended:false}));
+app.use(require('./rutas'));
+app.use(express.static(path.join(__dirname, '../../')))
+app.listen(3000, ()=>{
+    console.log('servidor iniciado...');
 });
-
-//inicializamos el servidor
-app.listen(PORT, ()=> console.log(`Aplicación lista en el puerto ${PORT}`));

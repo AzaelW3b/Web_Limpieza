@@ -50,29 +50,29 @@
                     <p>+52 229-591-22-46</p>
                     <p>Veracruz,ver</p>
             </div>
-            <form action="" class="formulario-contacto">
+            <form action="/correo" method="post" class="formulario-contacto">
                 <div class="titulo-formulario">
                     <p>Todos los campos son obligatorio*</p>
                 </div>
                 <div class="inputs-formulario-contratar">
                     <label for="nombre">Nombre completo <span>*</span></label>
-                    <input type="text" id="nombre" class="input-form">
+                    <input name="nombre" type="text" id="nombre" class="input-form">
                 </div>
     
                 <div class="inputs-formulario-contratar">
                     <label for="correo">Correo <span>*</span></label>
-                    <input id= "correo" type="email" class="input-form">
+                    <input name="correo" id= "correo" type="email" class="input-form">
                 </div>
     
                 
                 <div class="inputs-formulario-contratar">
                     <label for="telefono">Telefono <span>*</span></label>
-                    <input type="tel" id="telefono" class="input-form">
+                    <input name="telefono" type="tel" id="telefono" class="input-form">
                 </div>
     
                 <div class="inputs-formulario-contratar textarea">
                     <label for="Mensaje">Mensaje <span>*</span></label>
-                    <textarea id="mensaje" placeholder="Duda o comentario" class="input-form"></textarea>
+                    <textarea name="mensaje" id="mensaje" placeholder="Duda o comentario" class="input-form"></textarea>
                 </div>
                 <div class="contenedor-mensajes">
     
