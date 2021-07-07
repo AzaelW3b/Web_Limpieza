@@ -15,19 +15,20 @@ router.post("/correo",async (req, res) => {
         </ul>
         <p>${mensaje}</p>
     `;
+
  const transporter =  nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
-    secure:false,
+    host: "mx60.hostgator.mx",
+    port: 465,
+    secure:true,
     auth: {
-      user: "b7a9586b718508",
-      pass: "f9f033814b0569",
+      user: "azael@guardianesdelgolfo.com.mx",
+      pass: "conker123",
     },
   });
  const info = await transporter.sendMail({
       from:'Desde contacto',
       to:'guardianes@guardianes.com',
-      subject:'Servidor de pruebas Guardianes del Golfo',
+      subject:'Servidor de correo  Guardianes del Golfo',
       html: contentHTML
 
   });

@@ -8,15 +8,15 @@
         },
         {
             "id":2,
-            "precio": 10500,
-            "nombre": "Limpieza Profesional",
-            "dias": "3 dias"
+            "precio": 8400,
+            "nombre": " + IVA Fijo Mensual",
+            "dias": "6 dias a la semana"
         },
         {
             "id":3,
             "precio": 25000,
             "nombre": "Limpieza Profesional",
-            "dias": "2 semanas"
+            "dias": "2 dias"
         }
         
     ]

@@ -84,6 +84,11 @@
    }
 }
 .enlaces-footer{
+    ul{
+        li{
+            color: $blanco;
+        }
+    }
     @include tablet{
         @include direccion-flex-centrar-horizontal;
     }

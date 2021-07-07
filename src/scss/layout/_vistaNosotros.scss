@@ -151,6 +151,7 @@
 /*Valores*/
 
 .contenido-valores{
+    overflow:hidden;
     @include escritorio{
         @include grid(3,1fr);
     }

@@ -7,13 +7,12 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guardianes Del Golfo | Seguridad Privada</title>
-    <link rel="shortcut icon" href="build/img/logoSinFondo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="build/img/logo.png" type="image/x-icon">
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/753766ce2c.js" crossorigin="anonymous"></script>
     <link rel="preload" href="build/css/app.css" as="style">
     <link rel="stylesheet" href="build/css/app.css">
-
 </head>
 
 <body>
@@ -47,7 +46,7 @@
             <div class="info-contacto ">
                 <h2>Información de contacto</h2>
                     <p>ventas@guardianesdelgolfo.com.mx</p>
-                    <p>+52 229-591-22-46</p>
+                    <p>229-591-22-46</p>
                     <p>Veracruz,ver</p>
             </div>
             <form action="/correo" method="post" class="formulario-contacto">
@@ -56,18 +55,18 @@
                 </div>
                 <div class="inputs-formulario-contratar">
                     <label for="nombre">Nombre completo <span>*</span></label>
-                    <input name="nombre" type="text" id="nombre" class="input-form">
+                    <input required name="nombre" type="text" id="nombre" class="input-form">
                 </div>
     
                 <div class="inputs-formulario-contratar">
                     <label for="correo">Correo <span>*</span></label>
-                    <input name="correo" id= "correo" type="email" class="input-form">
+                    <input required name="correo" id= "correo" type="email" class="input-form">
                 </div>
     
                 
                 <div class="inputs-formulario-contratar">
                     <label for="telefono">Telefono <span>*</span></label>
-                    <input name="telefono" type="tel" id="telefono" class="input-form">
+                    <input required name="telefono" type="tel" id="telefono" class="input-form">
                 </div>
     
                 <div class="inputs-formulario-contratar textarea">
@@ -78,7 +77,7 @@
     
                 </div>
                 <div class="boton-contacto">
-                    <input type="submit" class="boton-primario azul boton-contratar" value="Enviar">
+                    <input required type="submit" class="boton-primario azul boton-contratar" value="Enviar">
                 </div>
             </form>
         </div>
@@ -92,7 +91,7 @@
     <footer class="footer">
         <div class="contenedor-footer contenedor">
             <div class="logo-footer alinear-logo">
-                <img src="src/img/logoSinFondo.png" alt="">
+                <img loading="lazy" src="src/img/logo.png" alt="">
                 <p>Somos tan grandes como grande es nuestra gente</p>
             </div>
             <div class="enlaces-footer ultimo-enlaces">
@@ -120,7 +119,7 @@
                 <p>Todos los derechos reservados &copy; <span id="fecha"></span> Guardianes Del Golfo</p>
             </div>
             <div class="contenedor-autor">
-                <p>Desarrollado por <span class="autor">el equipo de Guardianes Del Golfo</span></p>
+                <p> Esta página <span class="autor">fue desarrollada por el equipo de Guardianes Del Golfo</span></p>
             </div>
         </div>
     </footer>
