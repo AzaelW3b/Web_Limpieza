@@ -65,7 +65,7 @@ async function mostrarServicio() {
       const { id, precio, nombre, dias } = servicio;
       const precioServicio = document.createElement("p");
       precioServicio.classList.add("precio");
-      precioServicio.innerHTML = `<span>$</span> ${precio}`;
+      precioServicio.innerHTML = `<span>$</span> ${precio} + IVA`;
 
       const nombreServicio = document.createElement("p");
       nombreServicio.classList.add("nombre-servicio");
