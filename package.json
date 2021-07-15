@@ -4,7 +4,7 @@
   "description": "Pagina web para una empresa de seguridad privada",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon src/js/servidor.js"
+    "dev": "nodemon src/js/servidor.js"
   },
   "repository": {
     "type": "git",
