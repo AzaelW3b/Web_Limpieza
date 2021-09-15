@@ -5,7 +5,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Guardianes Del Golfo | Seguridad Privada</title>
+    <title>Guardianes Del Golfo | Limpieza Profesional</title>
     <link rel="shortcut icon" href="build/img/logo.png" type="image/x-icon">
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -19,13 +19,13 @@
     <div class="navegacion-contenido">
         <div class="navegacion-contenedor contenedor">
             <div class="navegacion-logo">
-                <p>Guardianes Del Golfo</p>
+                <a href="/"><p>Guardianes Del Golfo</p></a>
             </div>
             <nav class="navegacion">
-                <a href="index.html" data-numero="1">Inicio</a>
+                <a href="/" data-numero="1">Inicio</a>
                 <a href="nosotros.html" data-numero="2">Nosotros</a>
                 <a href="limpieza.html" data-numero="3">Limpieza Profesional</a>
-                <a href="cotizacion.html" data-numero="4">Cotizacion</a>
+                <!-- <a href="cotizacion.html" data-numero="4">Cotizacion</a> -->
                 <a href="contacto.html" data-numero="5">Contacto</a>
 
             </nav>
@@ -45,28 +45,36 @@
     </div>
 
     <div class="contenedor-menu-servicios contenedor">
+       <a href="#fisica" class="link-menu">
         <div class="menu-servicio servicio-activo" data-servicio="fisica">
             <i class="fas fa-code-branch"></i>
             <p>Analisis y Diagnostico</p>
         </div>
+       </a>
 
-        <div class="menu-servicio" data-servicio="proteccion">
-            <i class="fas fa-check-circle"></i>
-            <p class="servicio-proteccion">Propuesta de solución</p>
-
-        </div>
-        <div class="menu-servicio" data-servicio="monitoreo">
-            <i class="fas fa-pump-medical"></i>
-            <p>Herramientas de higiene</p>
-        </div>
-        <div class="menu-servicio" data-servicio="custodia">
-            <i class="fas fa-hand-sparkles"></i>
-            <p>Protocolos de higiene</p>
-        </div>
+        <a href="#proteccion"  class="link-menu">
+            <div class="menu-servicio" data-servicio="proteccion">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                <p class="servicio-proteccion">Propuesta de solución</p>
+    
+            </div>
+        </a>
+        <a href="#monitoreo" class="link-menu">
+            <div class="menu-servicio" data-servicio="monitoreo">
+                <i class="fas fa-pump-medical"></i>
+                <p>Herramientas de higiene</p>
+            </div>
+        </a>
+        <a href="#custodia" class="link-menu">
+            <div class="menu-servicio" data-servicio="custodia">
+                <i class="fas fa-hand-sparkles"></i>
+                <p>Protocolos de higiene</p>
+            </div>
+        </a>
     </div>
 
     <div class="contenedor-descripcion-servicios contenedor">
-        <div class="descripcion-servicio descripcion-activa" data-servicio="fisica">
+        <div class="descripcion-servicio descripcion-activa" data-servicio="fisica" id="fisica">
             <div class="descripcion-texto-servicio">
                 <p>Las ventajas de permitirnos realizar un analisis y un Diagnostico
                     seran con la finalidad de economizar y utilizar estrictamente lo necesario.
@@ -91,10 +99,7 @@
                         </p>
                         <i class="far fa-check-circle"></i>
                     </li>
-                    <!-- <li>
-                        <p>Al contratarnos podras obtener promociones exclusivas ¿pregunta como?</p>
-                        <i class="far fa-check-circle"></i>
-                    </li> -->
+
                 </ul>
                 <div class="boton-contratar-servicio">
                     <button class="boton-primario azul">Contratar ahora</button>
@@ -105,7 +110,7 @@
             </div>
         </div>
 
-        <div class="descripcion-servicio" data-servicio="proteccion">
+        <div class="descripcion-servicio" data-servicio="proteccion" id="proteccion">
             <div class="descripcion-texto-servicio">
                 <p>Obtenidos los datos necesarios para dictaminar lo que tu empresa
                     te ofreceremos una solución, justo como un traje ¡a la medida!
@@ -137,7 +142,7 @@
             </div>
         </div>
 
-        <div class="descripcion-servicio" data-servicio="monitoreo">
+        <div class="descripcion-servicio" data-servicio="monitoreo" id="monitoreo">
             <div class="descripcion-texto-servicio">
                 <p>Conocer los productos que se aplican en tu espacio, te da la tranquilidad de saber de
                     que son amigables con el medio ambiente, y Biodegradables.
@@ -169,7 +174,7 @@
             </div>
         </div>
 
-        <div class="descripcion-servicio" data-servicio="custodia">
+        <div class="descripcion-servicio" data-servicio="custodia" id="custodia">
             <div class="descripcion-texto-servicio">
            
                 <p>Obten la tranquilidad que tu empresa requiere, con nuestro personal Capacitado
@@ -206,50 +211,53 @@
                 <p> 229-591-22-46</p>
             </div>
         </div>
-        <form action="/correo" method="post" class="contenedor-formulario">
+        <form action="" method="post" class="contenedor-formulario">
            
             <div class="cerrar-form">
                 <img loading="lazy"  class="boton-cerrar" src="/build/img/suma.svg" alt="">
             </div>
             <div class="titulo-formulario">
-                <p>Todos los campos son obligatorio*</p>
+                <p>Todos los campos son obligatorios</p>
             </div>
             <div class="inputs-formulario-contratar">
-                <label for="nombre">Nombre completo <span>*</span></label>
-                <input name="nombre" type="text" id="nombre" class="input-form">
+                <label for="nombre">Nombre completo </label>
+                <input name="nombre" type="text" id="nombre" class="input-form" placeholder="Pedro García">
+                <div class="invalido">
+                    <p>Error debes ingresar un nombre valido</p>
+                </div>
             </div>
 
             <div class="inputs-formulario-contratar">
-                <label for="correo">Correo <span>*</span></label>
-                <input name="correo" id= "correo" type="email" class="input-form">
+                <label for="correo">Correo </label>
+                <input name="correo" id= "correo" type="email" class="input-form" placeholder="correo@correo.com">
+                <div class="invalido">
+                    <p>El correo debe incluir un "@" y un dominio valido</p>
+                </div>
             </div>
 
             
             <div class="inputs-formulario-contratar">
-                <label for="telefono">Telefono <span>*</span></label>
-                <input name ="telefono" type="tel" id="telefono" class="input-form">
+                <label for="telefono">Telefono </label>
+                <input name ="telefono" type="tel" id="telefono" class="input-form" placeholder="0808080808">
+                <div class="invalido">
+                    <p>El numero de telefono debe incluir solo numeros e incluir minimo diez caracteres</p>
+                </div>
             </div>
 
             <div class="inputs-formulario-contratar textarea">
-                <label for="Mensaje">Mensaje <span>*</span></label>
+                <label for="Mensaje">Mensaje </label>
                 <textarea name="mensaje" id="mensaje" placeholder="Duda o comentario" class="input-form"></textarea>
+                <div class="invalido">
+                    <p>Debes ingresar algun mensaje</p>
+                </div>
             </div>
-            <div class="contenedor-mensajes">
-
-            </div>
+             <div class="contenedor-mensajes"></div>
             <div class="boton-formulario-contratar">
                 <input type="submit" class="boton-primario azul boton-contratar" value="Enviar">
             </div>
 
         </form>
     </div>
-
-    <!-- <form action="/correo" method="post">
-        <button>
-            enviar
-        </button>
-    </form> -->
-
     <div class="informacion-contacto">
         <div class="alinear-iconos-contacto contenedor">
             <div class="iconos-contacto">
@@ -289,7 +297,7 @@
     <footer class="footer">
         <div class="contenedor-footer contenedor">
             <div class="logo-footer alinear-logo">
-                <img loading="lazy" src="build/img/logoSinFondo.png" alt="">
+                <img loading="lazy" src="build/img/logo.png" alt="">
                 <p>Somos tan grandes como grande es nuestra gente</p>
             </div>
             <div class="enlaces-footer ultimo-enlaces">
@@ -305,10 +313,10 @@
             <div class="enlaces-footer">
                 <h4>Limpieza profesional</h4>
                 <ul>
-                    <li><a href="#">Analisis y Diagnostico</a></li>
-                    <li><a href="#">Propuesta de solución</a></li>
-                    <li><a href="#">Herramientas de Higiene</a></li>
-                    <li><a href="#">Protocolos de higiene</a></li>
+                    <li>Analisis y Diagnostico</li>
+                    <li>Propuesta de solución</li>
+                    <li>Herramientas de Higiene</li>
+                    <li>Protocolos de higiene</li>
                 </ul>
             </div>
         </div>
@@ -317,7 +325,12 @@
                 <p>Todos los derechos reservados &copy; <span id="fecha"></span> Guardianes Del Golfo</p>
             </div>
             <div class="contenedor-autor">
-                <p>Desarrollado por <span class="autor">el equipo de Guardianes Del Golfo</span></p>
+                <p>
+                    Esta página
+                    <span class="autor"
+                      >fue desarrollada por el equipo de Guardianes Del Golfo</span
+                    >
+                  </p>
             </div>
         </div>
     </footer>
@@ -325,7 +338,7 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="build/js/app.js" type="module"></script>
-     <script src="build/js/app-servicios.js" type="module"></script>
+    <script src="build/js/app-servicios.js" type="module"></script>
 
   
 </body>

@@ -12,7 +12,7 @@
 }
 .formulario-contratar{
     animation: slideX .3s ease;
-    overflow-y: scroll;
+   
     background-color: $blanco;
     -webkit-box-shadow: 10px 13px 19px -14px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 13px 19px -14px rsgba(0,0,0,0.75);
@@ -70,44 +70,44 @@
     }
 }
 .contenedor-formulario{
-    padding: 2rem;
+    background-color:#E8E8E8;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 .titulo-formulario{
-    p{
-        color:$azul;
-        font-weight: $bold;
-        text-align: center;
-    }
-    
+    color:$azul;
+    font-weight: $bold;
+    text-align: center;
 }
 .inputs-formulario-contratar{
+    position: relative;
     label{
         display:block;
-        margin-bottom: 1.5rem;
+        margin: 1.3rem 0;
         color: $azul;
-        font-size: 1.8rem;
+        font-size: 1.8rem; 
     }
     input,textarea{
         width: 100%;
-        border: none;
-        border-bottom: 1px solid $azul;
         outline: 0;
+        border: none;
+        border-radius: .4rem;
         padding: .8rem;
         transition: all .3s ease-in-out;
-        &:focus{
-            border-bottom: 1px solid $amarillo;
-        }
+       
     }
   
     textarea{
        resize: none;
        
     }
+
+    
 }
 .boton-formulario-contratar{
+    margin-top: 2rem;
     display:flex;
     justify-content:flex-end;
 
@@ -146,4 +146,12 @@
     text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
+}
+
+.invalido{
+    display: none;
+    p{
+        color: $rojo;
+        font-size: 1.6rem;
+    }
 }

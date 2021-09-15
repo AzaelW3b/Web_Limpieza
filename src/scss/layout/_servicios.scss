@@ -19,15 +19,18 @@
 }
 .lista-beneficios{
     .beneficio{
-        display:flex;
+        display: flex;
     }
 }
+
+
+
 .imagen-beneficio{
- 
-    img{
-        width:10rem;
-        height:10rem;
-    }
+   display: flex;
+   align-items: center;
+   font-size: 5rem;
+   margin-right: 2rem;
+   color: $azulClaro;
 }
 .texto-servicio{
     display: flex;
@@ -37,7 +40,30 @@
         color:$azul;
         
         @include adorno-texto(1rem);
+        text-align: center;
     }
+    p{
+        text-align: center;
+       
+    }
+
+    @include tablet{
+        h2{
+            text-align: left;
+        }
+        p{
+            text-align: left;
+            margin-right: 2rem;
+        }
+    }
+
+    @include escritorio{
+        p{
+            text-align: justify;
+        }
+    }
+
+    
 }
 .texto-beneficio{
     margin-right: 2rem;

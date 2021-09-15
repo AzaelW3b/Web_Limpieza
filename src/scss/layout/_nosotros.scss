@@ -32,11 +32,36 @@
   }
 }
 .texto-info-nosotros{
-  
+ 
   h3{
     text-transform: uppercase;
     color: $amarillo;
+    text-align: center;
     
+  }
+  p{
+    text-align: center;
+  }
+  @include tablet{
+      h3{
+        text-align:left;
+      }
+      p{
+        text-align: left;
+      }
+  }
+  @include escritorio{
+    p{
+      text-align: justify;
+    }
+  }
+}
+.btn-nosotros{
+  display: flex;
+  justify-content: center;
+
+  @include tablet{
+    display: unset;
   }
 }
 .contenedor-nosotros-imagen{
@@ -57,6 +82,7 @@
 .pantallaCompleta{
   
   position: fixed;
+  overflow-y: scroll;
   z-index: 2;
   background-color: rgba(0,0,0,.5);
   width: 100%;

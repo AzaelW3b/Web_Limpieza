@@ -367,6 +367,10 @@ img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .margin-top {
   margin-top: 10rem;
 }
@@ -501,6 +505,7 @@ a {
 
 .navegacion-contenedor p, .navegacion-contenedor a {
   color: #fff;
+  text-decoration: none;
 }
 
 .navegacion-logo p {
@@ -948,6 +953,37 @@ a {
 .texto-info-nosotros h3 {
   text-transform: uppercase;
   color: #EFB810;
+  text-align: center;
+}
+
+.texto-info-nosotros p {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .texto-info-nosotros h3 {
+    text-align: left;
+  }
+  .texto-info-nosotros p {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .texto-info-nosotros p {
+    text-align: justify;
+  }
+}
+
+.btn-nosotros {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .btn-nosotros {
+    display: unset;
+  }
 }
 
 .contenedor-nosotros-imagen {
@@ -969,6 +1005,7 @@ a {
 
 .pantallaCompleta {
   position: fixed;
+  overflow-y: scroll;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -1100,9 +1137,12 @@ a {
   display: flex;
 }
 
-.imagen-beneficio img {
-  width: 10rem;
-  height: 10rem;
+.imagen-beneficio {
+  display: flex;
+  align-items: center;
+  font-size: 5rem;
+  margin-right: 2rem;
+  color: #38B6FF;
 }
 
 .texto-servicio {
@@ -1113,6 +1153,7 @@ a {
 
 .texto-servicio h2 {
   color: #122348;
+  text-align: center;
 }
 
 .texto-servicio h2::before {
@@ -1120,6 +1161,26 @@ a {
   color: #EFB810;
   margin-right: 1rem;
   font-weight: 700;
+}
+
+.texto-servicio p {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .texto-servicio h2 {
+    text-align: left;
+  }
+  .texto-servicio p {
+    text-align: left;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .texto-servicio p {
+    text-align: justify;
+  }
 }
 
 .texto-beneficio {
@@ -1750,7 +1811,7 @@ button.activo-cotizacion {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #E8E8E8;
   padding: 3rem;
 }
 
@@ -1921,6 +1982,7 @@ button.activo-cotizacion {
   background-size: cover;
   position: relative;
   background-position: right;
+  background-attachment: unset;
   padding-top: 10rem;
   height: 45rem;
 }
@@ -1937,6 +1999,7 @@ button.activo-cotizacion {
 
 @media (min-width: 768px) {
   .banner-nosotros {
+    background-attachment: fixed;
     background-position: top;
     padding-top: 5rem;
     height: 90rem;
@@ -2038,12 +2101,18 @@ button.activo-cotizacion {
 
 .texto-conocenos p {
   color: #122348;
-  text-align: left;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .texto-conocenos p {
+    text-align: left;
+  }
 }
 
 @media (min-width: 1200px) {
   .texto-conocenos p {
-    text-align: left;
+    text-align: justify;
   }
 }
 
@@ -2096,9 +2165,14 @@ button.activo-cotizacion {
   font-weight: 700;
 }
 
-@media (min-width: 1200px) {
+.contenido-texto-filosofia p {
+  color: #122348;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
   .contenido-texto-filosofia p {
-    color: #122348;
+    text-align: left;
   }
 }
 
@@ -2117,6 +2191,13 @@ button.activo-cotizacion {
 .imagen-filosofia .frase-filosofia p {
   color: rgba(18, 35, 72, 0.5);
   font-style: italic;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .imagen-filosofia .frase-filosofia p {
+    text-align: left;
+  }
 }
 
 /*Valores*/
@@ -2261,6 +2342,7 @@ button.activo-cotizacion {
   height: 65rem;
   background-size: cover;
   position: relative;
+  background-attachment: unset;
   background-position: top;
 }
 
@@ -2272,6 +2354,12 @@ button.activo-cotizacion {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .vista-servicios {
+    background-attachment: fixed;
+  }
 }
 
 .texto-vista-servicios {
@@ -2301,6 +2389,19 @@ button.activo-cotizacion {
 
 .boton-contratar-servicio button:hover {
   cursor: pointer;
+}
+
+.link-menu {
+  text-decoration: none;
+}
+
+.link-menu:visited {
+  color: black;
+}
+
+.link-menu:link {
+  text-decoration: none;
+  color: black;
 }
 
 .contenedor-menu-servicios {
@@ -2436,7 +2537,6 @@ button.activo-cotizacion {
 .descripcion-servicio {
   animation: slideX .3s ease;
   display: none;
-  justify-content: space-between;
 }
 
 .descripcion-activa {
@@ -2452,7 +2552,10 @@ button.activo-cotizacion {
 
 @media (min-width: 768px) {
   .descripcion-activa {
+    height: 70rem;
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -2551,7 +2654,6 @@ button.activo-cotizacion {
 
 .formulario-contratar {
   animation: slideX .3s ease;
-  overflow-y: scroll;
   background-color: #ffffff;
   -webkit-box-shadow: 10px 13px 19px -14px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 13px 19px -14px rsgba(0, 0, 0, 0.75);
@@ -2631,36 +2733,37 @@ button.activo-cotizacion {
 }
 
 .contenedor-formulario {
-  padding: 2rem;
+  background-color: #E8E8E8;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.titulo-formulario p {
+.titulo-formulario {
   color: #122348;
   font-weight: 700;
   text-align: center;
 }
 
+.inputs-formulario-contratar {
+  position: relative;
+}
+
 .inputs-formulario-contratar label {
   display: block;
-  margin-bottom: 1.5rem;
+  margin: 1.3rem 0;
   color: #122348;
   font-size: 1.8rem;
 }
 
 .inputs-formulario-contratar input, .inputs-formulario-contratar textarea {
   width: 100%;
-  border: none;
-  border-bottom: 1px solid #122348;
   outline: 0;
+  border: none;
+  border-radius: .4rem;
   padding: .8rem;
   transition: all .3s ease-in-out;
-}
-
-.inputs-formulario-contratar input:focus, .inputs-formulario-contratar textarea:focus {
-  border-bottom: 1px solid #EFB810;
 }
 
 .inputs-formulario-contratar textarea {
@@ -2668,6 +2771,7 @@ button.activo-cotizacion {
 }
 
 .boton-formulario-contratar {
+  margin-top: 2rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -2712,4 +2816,13 @@ button.activo-cotizacion {
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
+}
+
+.invalido {
+  display: none;
+}
+
+.invalido p {
+  color: #dc3545;
+  font-size: 1.6rem;
 }

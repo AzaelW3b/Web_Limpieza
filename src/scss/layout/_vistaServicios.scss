@@ -1,10 +1,15 @@
 .vista-servicios{
     @include banner-bg-imagen( url(/build/img/nosotros1.jpg));
+    background-attachment: unset;
     background-position: top;
     @include difuminado-transparente($negroTransparente);
   
 }
-
+@include tablet{
+    .vista-servicios{
+        background-attachment: fixed;
+    }
+}
 .texto-vista-servicios{
    @include texto-bg-transparente;
 }
@@ -20,6 +25,16 @@
             cursor: pointer;
         }
     }
+}
+.link-menu{
+    text-decoration: none;
+}
+.link-menu:visited{
+    color: black;
+}
+.link-menu:link{
+    text-decoration: none;
+    color: black;
 }
 .contenedor-menu-servicios{
     padding: $separacion;
@@ -129,9 +144,8 @@
 }
 .descripcion-servicio{
     animation: slideX .3s ease;
-    
-   display: none;
-   justify-content: space-between;
+    display: none;
+
 }
 .descripcion-activa{
     overflow: hidden;
@@ -142,7 +156,10 @@
     }
     grid-template-columns: 1,1fr;
     @include tablet{
+        height: 70rem;
         display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

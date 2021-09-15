@@ -1,10 +1,12 @@
 .banner-nosotros{
     @include banner-bg-imagen( url(/build/img/nosotros.jpg));
     background-position: right;
+    background-attachment: unset;
     @include difuminado-transparente($negroTransparente);
     padding-top: 10rem;
     height: 45rem;
     @include tablet{
+        background-attachment: fixed;
         background-position: top;
         padding-top: 5rem;
         height: 90rem;
@@ -80,11 +82,14 @@
     p{
         
         color: $azul;
-        text-align: left;
-        @include escritorio{
+        text-align: center;
+        @include tablet{
             text-align: left;
         }
 
+        @include escritorio{
+            text-align: justify;
+        }
         
     }
 }
@@ -118,9 +123,13 @@
 
         @include adorno-texto(1rem);
     }
-    @include escritorio{
+    p{
+        color: $azul;
+        text-align: center;
+    }
+    @include tablet{
         p{
-            color: $azul;
+            text-align: left;
            
         }
     }
@@ -144,6 +153,13 @@
         p{
             color: rgba($azul, .5);
             font-style: italic;
+            text-align: center;
+        }
+
+        @include tablet{
+           p{
+               text-align: left;
+           }
         }
     }
 }
